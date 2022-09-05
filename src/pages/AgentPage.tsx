@@ -1,7 +1,7 @@
 import React from "react";
 
 const AgentPage = () => {
-  return <div>AgentPage</div>;
+  return <section>AgentPage</section>;
 };
 
 export default AgentPage;
