@@ -1,11 +1,11 @@
 import { createTheme } from "@mui/material/styles";
 
 const primaryColors = {
-  primary: `#151616`,
-  light: `#ffffff`,
-  accent: `#80FFC2`,
-  grey: `#808080`,
-  greyLight: `#C0C0C0`,
+  primary: `#0f1923`,
+  background: `#13212e`,
+  light: `#edeff1`,
+  accent: `#ab3745`,
+  grey: `#777f88`,
 };
 
 export const theme = createTheme({
@@ -15,7 +15,7 @@ export const theme = createTheme({
   palette: {
     primary: {
       main: primaryColors.primary,
-      light: primaryColors.greyLight,
+      light: primaryColors.background,
     },
     secondary: {
       main: primaryColors.light,
