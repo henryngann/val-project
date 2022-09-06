@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import { Root } from "react-dom/client";
 
 export default function useFetchAgentApi() {
   const [result, setResult] = useState();
@@ -8,13 +7,13 @@ export default function useFetchAgentApi() {
 
   const url = `https://localhost:8080/api/agents`;
 
-  const doCall = () =>
+  const fetchCall = () =>
     fetch(url)
       .then((res) => res.json())
       .then((result) => result);
 
   useEffect(() => {
-    doCall().then(
+    fetchCall().then(
       (result) => {
         setIsLoading(false);
         setResult(result);
@@ -26,5 +25,5 @@ export default function useFetchAgentApi() {
     );
   }, []); // eslint-disable-line react-hooks/exhaustive-deps
 
-  return { doCall, result, error, isLoading };
+  return { fetchCall, result, error, isLoading };
 }

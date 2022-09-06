@@ -1,7 +1,9 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import React from "react";
+import useFetchAgentApi from "../hooks/useFetchAgent";
 
 const LandingPage = () => {
+  const { fetchCall, result, error, isLoading } = useFetchAgentApi();
   const sectionStyles = {
     width: "100%",
     height: "100vh",
