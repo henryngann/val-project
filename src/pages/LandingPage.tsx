@@ -1,5 +1,5 @@
 import { Grid, Stack, Typography } from "@mui/material";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useFetchAgentApi from "../hooks/useFetchAgent";
 
 const LandingPage = () => {
@@ -8,6 +8,14 @@ const LandingPage = () => {
     width: "100%",
     height: "100vh",
   };
+  const [items, setItems] = useState();
+
+  useEffect(() => {
+    fetchCall().then((result) => setItems(result)); // eslint-disable-next-line
+  }, []);
+  {
+    console.log(items);
+  }
 
   return (
     <Grid
@@ -20,7 +28,7 @@ const LandingPage = () => {
       alignItems="center"
     >
       <Grid item xs={3}>
-        <Typography>Val Logo</Typography>
+        <Typography> Val Logo</Typography>
       </Grid>
       <Grid item xs={3}>
         <Typography>Tabs</Typography>

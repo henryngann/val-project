@@ -5,11 +5,16 @@ export default function useFetchAgentApi() {
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  const url = `https://localhost:8080/api/agents`;
+  const url = "http://localhost:8080/api/agents";
 
   const fetchCall = () =>
     fetch(url)
-      .then((res) => res.json())
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error(res.statusText);
+        }
+        return res.json();
+      })
       .then((result) => result);
 
   useEffect(() => {
