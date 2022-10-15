@@ -1,5 +1,6 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import AgentSquare from "../components/AgentSquare";
 import useFetchAgentApi from "../hooks/useFetchAgent";
 
 const LandingPage = () => {
@@ -46,6 +47,7 @@ const LandingPage = () => {
         })
 
         */}
+        <AgentSquare />
       </Grid>
       <Grid item>Made w/ finger cramps. Henry Ngan.</Grid>
     </Grid>
