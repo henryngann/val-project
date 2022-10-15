@@ -1,7 +1,7 @@
 import { createTheme } from "@mui/material/styles";
 
 const primaryColors = {
-  primary: `#0f1923`,
+  primary: `#101823`,
   background: `#13212e`,
   light: `#edeff1`,
   accent: `#ab3745`,
@@ -29,11 +29,23 @@ export const theme = createTheme({
     MuiButton: {
       styleOverrides: {
         root: {
-          borderColor: primaryColors.light,
-          "&:hover": {
-            color: primaryColors.accent,
-            borderColor: primaryColors.accent,
-          },
+          color: primaryColors.light,
+        },
+      },
+    },
+    MuiButtonBase: {
+      styleOverrides: {
+        root: {
+          color: primaryColors.light,
+        },
+      },
+    },
+
+    MuiTabs: {
+      styleOverrides: {
+        root: {},
+        indicator: {
+          backgroundColor: primaryColors.accent,
         },
       },
     },

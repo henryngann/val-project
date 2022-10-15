@@ -1,21 +1,25 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import ValorantTabs from "../components/ValorantTabs";
 import useFetchAgentApi from "../hooks/useFetchAgent";
 
 const LandingPage = () => {
-  const { fetchCall, result, error, isLoading } = useFetchAgentApi();
   const sectionStyles = {
     width: "100%",
     height: "100vh",
   };
-  const [items, setItems] = useState();
 
-  useEffect(() => {
-    fetchCall().then((result) => setItems(result)); // eslint-disable-next-line
-  }, []);
-  {
-    console.log(items);
-  }
+  const valLogo = (
+    <img
+      src="./assets/valorantlogo.png"
+      style={{
+        objectFit: "contain",
+        width: "100%",
+        height: "auto",
+        maxHeight: "20vh",
+      }}
+    />
+  );
 
   return (
     <Grid
@@ -27,16 +31,13 @@ const LandingPage = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Grid item xs={3}>
-        <Typography> Val Logo</Typography>
+      <Grid item xs={3} xl={1} sx={{ backgroundColor: "green" }}>
+        {valLogo}
       </Grid>
-      <Grid item xs={3}>
-        <Typography>Tabs</Typography>
+      <Grid item xs={8}>
+        <ValorantTabs />
       </Grid>
-      <Grid item xs={5}>
-        Content
-      </Grid>
-      <Grid item>Footer</Grid>
+      <Grid item>Made w/ finger cramps. Henry Ngan.</Grid>
     </Grid>
   );
 };
