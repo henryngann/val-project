@@ -1,6 +1,5 @@
 import { Grid, Stack, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import ValorantTabs from "../components/ValorantTabs";
 import useFetchAgentApi from "../hooks/useFetchAgent";
 
 const LandingPage = () => {
@@ -9,6 +8,7 @@ const LandingPage = () => {
     height: "100vh",
   };
 
+  const { result } = useFetchAgentApi();
   const valLogo = (
     <img
       src="./assets/valorantlogo.png"
@@ -20,6 +20,8 @@ const LandingPage = () => {
       }}
     />
   );
+
+  console.log(result);
 
   return (
     <Grid
@@ -35,7 +37,15 @@ const LandingPage = () => {
         {valLogo}
       </Grid>
       <Grid item xs={8}>
-        <ValorantTabs />
+        {/* Make an Agent Component that returns a box
+        
+        result.map((it)=>{
+
+          <AgentSquare image={it.image}  name={it.displayname}   />
+
+        })
+
+        */}
       </Grid>
       <Grid item>Made w/ finger cramps. Henry Ngan.</Grid>
     </Grid>

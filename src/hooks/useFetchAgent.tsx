@@ -5,8 +5,9 @@ export default function useFetchAgentApi() {
   const [error, setError] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
-  const url = "http://localhost:8080/api/agents";
+  const url = "https://valorant-api.com/v1/agents";
 
+  //http://localhost:8080/api/agents
   const fetchCall = () =>
     fetch(url)
       .then((res) => {
