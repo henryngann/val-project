@@ -50,6 +50,9 @@ const LandingPage = () => {
         })
 
         */}
+        {agents?.data.map((it) => {
+          return it.displayName;
+        })}
       </Grid>
       <Grid item>Made w/ finger cramps. Henry Ngan.</Grid>
     </Grid>
