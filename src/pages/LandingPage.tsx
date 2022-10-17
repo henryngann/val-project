@@ -50,6 +50,8 @@ const LandingPage = () => {
         })
 
         */}
+        {agents?.data[0].displayIcon}
+
       </Grid>
       <Grid item>Made w/ finger cramps. Henry Ngan.</Grid>
     </Grid>
