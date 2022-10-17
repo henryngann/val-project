@@ -1,15 +1,19 @@
-import { Grid, Stack, Typography } from "@mui/material";
+import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import AgentSquare from "../components/AgentSquare";
-import useFetchAgentApi from "../hooks/useFetchAgent";
+import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
 const LandingPage = () => {
   const sectionStyles = {
     width: "100%",
     height: "100vh",
   };
+  const [agents, setAgents] = useState<Root>();
+  const { fetchCall } = useFetchAgentApi();
 
-  const { result } = useFetchAgentApi();
+  useEffect(() => {
+    fetchCall().then((result) => setAgents(result as Root)); // eslint-disable-next-line
+  }, []);
   const valLogo = (
     <img
       src="./assets/valorantlogo.png"
@@ -21,8 +25,7 @@ const LandingPage = () => {
       }}
     />
   );
-
-  console.log(result);
+  console.log(agents?.data[0]);
 
   return (
     <Grid
@@ -47,7 +50,6 @@ const LandingPage = () => {
         })
 
         */}
-        <AgentSquare />
       </Grid>
       <Grid item>Made w/ finger cramps. Henry Ngan.</Grid>
     </Grid>
