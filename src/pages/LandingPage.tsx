@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import AgentSquare from "../components/AgentSquare";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
@@ -41,17 +41,9 @@ const LandingPage = () => {
         {valLogo}
       </Grid>
       <Grid item xs={8}>
-        {/* Make an Agent Component that returns a box
-        
-        result.map((it)=>{
 
-          <AgentSquare image={it.image}  name={it.displayname}   />
-
-        })
-
-        */}
         {agents?.data.map((it) => {
-          return it.displayIcon
+          return <Box component="img" src={it.displayIcon} alt="Agents" style={{ width: 40, border: "1px solid grey" }}></Box>
         })}
 
       </Grid>

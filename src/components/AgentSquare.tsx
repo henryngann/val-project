@@ -1,14 +1,15 @@
+import { Box } from "@mui/system";
 import React from "react";
 
 //Pass Props in to make the square dynamic
 
 interface AgentProps {
-  image?: string;
+  displayIcon?: string;
   name?: string;
 }
 
-const AgentSquare = ({ image, name }: AgentProps) => {
-  return <div>AgentSquare</div>;
+const AgentSquare = ({ displayIcon, name }: AgentProps) => {
+  return <Box component="img"></Box>
 };
 
 export default AgentSquare;
