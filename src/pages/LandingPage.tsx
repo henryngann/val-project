@@ -52,7 +52,7 @@ const LandingPage = () => {
           );
         })}
       </Grid>
-      {/*Make a footer component  <footer message={'Made with power of friendship'}>{message}</footer> */}
+      {/* Todo Make a footer component  <footer message={'Made with power of friendship'}>{message}</footer> */}
     </Grid>
   );
 };
