@@ -25,7 +25,6 @@ const LandingPage = () => {
       }}
     />
   );
-  console.log(agents?.data[0]);
 
   return (
     <Grid
