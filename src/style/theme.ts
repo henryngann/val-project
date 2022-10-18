@@ -65,22 +65,6 @@ export const theme = createTheme({
         },
       },
     },
-    MuiList: {
-      styleOverrides: {
-        root: {
-          backgroundColor: primaryColors.primary,
-        },
-      },
-    },
-    MuiSvgIcon: {
-      styleOverrides: {
-        root: {
-          "&:hover": {
-            color: primaryColors.accent,
-          },
-        },
-      },
-    },
   },
 });
 

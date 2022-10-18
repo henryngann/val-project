@@ -1,4 +1,4 @@
-import { Grid, Box } from "@mui/material";
+import { Grid, Box, Typography, Chip } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import AgentSquare from "../components/AgentSquare";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
@@ -14,6 +14,8 @@ const LandingPage = () => {
   useEffect(() => {
     fetchCall().then((result) => setAgents(result as Root)); // eslint-disable-next-line
   }, []);
+  //TODO Make this a reusable react component. ValLogoImage.tsx and whenever you do <ValLogoImage />
+
   const valLogo = (
     <img
       src="./assets/valorantlogo.png"
@@ -32,21 +34,25 @@ const LandingPage = () => {
       display="flex"
       component={"section"}
       sx={sectionStyles}
-      direction={"column"}
+      direction={"row"}
       justifyContent="center"
       alignItems="center"
     >
-      <Grid item xs={3} xl={1} sx={{ backgroundColor: "green" }}>
+      <Grid item xs={12}>
         {valLogo}
       </Grid>
-      <Grid item xs={8}>
-
+      {/*TODO // Use Grids to space the cards out evenly */}
+      <Grid container justifyContent="space-around" item xs={6}>
+        <AgentSquare />
         {agents?.data.map((it) => {
-          return <Box component="img" src={it.displayIcon} alt="Agents" style={{ width: 40, border: "1px solid grey" }}></Box>
+          return (
+            <Grid item xl={1}>
+              {/* <AgentSquare displayIcon={it.displayIcon} /> */}
+            </Grid>
+          );
         })}
-
       </Grid>
-      <Grid item>Made w/ finger cramps. Henry Ngan.</Grid>
+      {/*Make a footer component  <footer message={'Made with power of friendship'}>{message}</footer> */}
     </Grid>
   );
 };
