@@ -16,6 +16,9 @@ const LandingPage = () => {
   useEffect(() => {
     fetchCall().then((result) => setAgents(result as Root)); // eslint-disable-next-line
   }, []);
+  //TODO Make this a reusable react component. ValLogoImage.tsx and whenever you do <ValLogoImage />
+
+
 
   return (
     <Grid
@@ -36,7 +39,7 @@ const LandingPage = () => {
         {agents?.data.map((it) => {
           return (
             <Grid item xl={1}>
-              <AgentCard agentImage={it.displayIcon} />
+              <AgentCard agentImage={it.fullPortrait} name={it.role?.displayName} />
             </Grid>
           );
         })}
