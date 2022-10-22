@@ -10,7 +10,7 @@ export interface Daum {
   description: string;
   developerName: string;
   characterTags?: string[];
-  displayIcon: string;
+  displayIcon?: string;
   displayIconSmall: string;
   bustPortrait?: string;
   fullPortrait?: string;
