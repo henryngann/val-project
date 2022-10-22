@@ -1,17 +1,20 @@
-import * as React from "react";
 import { useTheme } from "@mui/material/styles";
+import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import IconButton from "@mui/material/IconButton";
 import Typography from "@mui/material/Typography";
-import SkipPreviousIcon from "@mui/icons-material/SkipPrevious";
-import PlayArrowIcon from "@mui/icons-material/PlayArrow";
-import SkipNextIcon from "@mui/icons-material/SkipNext";
+import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
-export default function MediaControlCard() {
+interface AgentProps {
+  name?: string
+  agentImage?: string
+}
+
+export default function AgentCard({ name, agentImage }: AgentProps) {
   const theme = useTheme();
+
 
   //TODO Rename AgentSquare to AgentCard
   //TODO Rename MediaControlCard to AgentCard
@@ -31,18 +34,17 @@ export default function MediaControlCard() {
             color="text.secondary"
             component="div"
           >
-            Mac Miller
+            {name}
           </Typography>
         </CardContent>
         <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}>
-          asd fasdf asdf asdf
+
         </Box>
       </Box>
       <CardMedia
         component="img"
-        sx={{ width: 151 }}
-        image="/static/images/cards/live-from-space.jpg"
-        alt="Live from space album cover"
+        sx={{ width: 95 }}
+        image={agentImage}
       />
     </Card>
   );

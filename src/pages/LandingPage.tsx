@@ -1,6 +1,8 @@
 import { Grid, Box, Typography, Chip } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import AgentSquare from "../components/AgentSquare";
+import AgentCard from "../components/AgentCard";
+import Footer from "../components/Footer";
+import { ValLogo } from "../components/ValLogo";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
 const LandingPage = () => {
@@ -16,17 +18,7 @@ const LandingPage = () => {
   }, []);
   //TODO Make this a reusable react component. ValLogoImage.tsx and whenever you do <ValLogoImage />
 
-  const valLogo = (
-    <img
-      src="./assets/valorantlogo.png"
-      style={{
-        objectFit: "contain",
-        width: "100%",
-        height: "auto",
-        maxHeight: "20vh",
-      }}
-    />
-  );
+
 
   return (
     <Grid
@@ -39,20 +31,22 @@ const LandingPage = () => {
       alignItems="center"
     >
       <Grid item xs={12}>
-        {valLogo}
+        <ValLogo />
       </Grid>
       {/*TODO // Use Grids to space the cards out evenly */}
       <Grid container justifyContent="space-around" item xs={6}>
-        <AgentSquare />
+        <AgentCard />
         {agents?.data.map((it) => {
           return (
             <Grid item xl={1}>
-              {/* <AgentSquare displayIcon={it.displayIcon} /> */}
+              <AgentCard agentImage={it.displayIcon} />
             </Grid>
           );
         })}
       </Grid>
-      {/* Todo Make a footer component  <footer message={'Made with power of friendship'}>{message}</footer> */}
+      <Grid item xs={12}>
+        <Footer />
+      </Grid>
     </Grid>
   );
 };
