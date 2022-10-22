@@ -1,11 +1,8 @@
-import { useTheme } from "@mui/material/styles";
-import React, { useEffect, useState } from "react";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
-import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
 interface AgentProps {
   name?: string;
@@ -13,8 +10,6 @@ interface AgentProps {
 }
 
 export default function AgentCard({ name, agentImage }: AgentProps) {
-  const theme = useTheme();
-
   return (
     <Card sx={{ display: "flex" }}>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
