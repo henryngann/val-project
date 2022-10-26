@@ -5,6 +5,8 @@ import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
+
+
 const LandingPage = () => {
   const sectionStyles = {
     width: "100%",
@@ -38,14 +40,17 @@ const LandingPage = () => {
         <ValLogo />
       </Grid>
       {/*TODO // Use Grids to space the cards out evenly */}
-      <Grid container justifyContent="space-around" item xs={6}>
+      <Grid container justifyContent="space-between" item xs={8}>
         <AgentCard />
         {agents?.data.map((it) => {
           return (
             <Grid item xl={1}>
               <AgentCard
-                agentImage={it.fullPortrait}
+                agentImage={it.fullPortraitV2}
                 name={it.role?.displayName}
+                agentName={it.displayName}
+                ability1={it.abilities[1].displayName}
+                ability2={it.abilities[2].displayName}
               />
             </Grid>
           );

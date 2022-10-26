@@ -1,3 +1,4 @@
+
 import { createTheme } from "@mui/material/styles";
 
 const primaryColors = {
@@ -65,8 +66,27 @@ export const theme = createTheme({
         },
       },
     },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: primaryColors.grey,
+          width: "225px",
+        }
+      }
+    },
+    MuiCardMedia: {
+      styleOverrides: {
+        img: {
+          display: "flex",
+          height: 120,
+          width: "225px",
+        }
+      }
+    },
   },
+
 });
+
 
 theme.typography.h1 = {
   fontSize: "5.5rem",
