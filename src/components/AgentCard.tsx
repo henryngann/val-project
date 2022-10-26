@@ -10,30 +10,48 @@ interface AgentProps {
   agentImage?: string;
   ability1?: string;
   ability2?: string;
+  alt?: string;
 }
 
+export default function AgentCard({
+  name,
+  agentImage,
+  ability1,
+  ability2,
+  agentName,
+  alt,
+}: AgentProps) {
+  /*
+   color: "red",
+              fontSize: 8,
+              display: "flex",
+              justifyContent: "center",
+              padding: 1,
+  */
 
+  //TODO increase widith of these cards
+  //Add bullet points
+  //Position absolute, scale it, make head above cards.
+  //add variants to typography
+  //Set the background of these cards, get color values and set it background of car
+  //add an alt prop to the image
 
-
-export default function AgentCard({ name, agentImage, ability1, ability2, agentName }: AgentProps) {
   return (
     <Card sx={{ display: "flex" }}>
       <Box sx={{ display: "flex", flexDirection: "column" }}>
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography variant="h5">{name}</Typography>
-          <Typography sx={{ fontFamily: 'Valorant', fontSize: 20 }} >
-            {agentName}
-          </Typography>
-          <Typography sx={{ color: "red", fontSize: 8, display: "flex", justifyContent: "center", padding: 1 }}>
-            {ability1}
-          </Typography>
-          <Typography sx={{ color: "red", fontSize: 8, display: "flex", justifyContent: "center", padding: 1 }}>
-            {ability2}
-          </Typography>
+          <Typography variant="h6">{agentName}</Typography>
+          <Box sx={{}}>
+            {/* Make this Box, a row and make these just like the design. Style it once in the design. */}
+            <Typography>{ability1}</Typography>
+            <Typography>{ability2}</Typography>
+          </Box>
         </CardContent>
-        <Box sx={{ display: "flex", alignItems: "center", pl: 1, pb: 1 }}></Box>
       </Box>
-      <CardMedia component="img" sx={{ width: 95 }} image={agentImage} />
+      <CardMedia sx={{ position: "relative", width: 300 }}>
+        <img src={agentImage} style={{ position: "absolute", width: "100%" }} />
+      </CardMedia>
     </Card>
   );
 }
