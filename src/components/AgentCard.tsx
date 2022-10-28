@@ -43,7 +43,6 @@ export default function AgentCard({
           <Typography variant="h5">{name}</Typography>
           <Typography variant="h6">{agentName}</Typography>
           <Box sx={{}}>
-            {/* Make this Box, a row and make these just like the design. Style it once in the design. */}
             <Typography>{ability1}</Typography>
             <Typography>{ability2}</Typography>
           </Box>
