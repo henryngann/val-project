@@ -69,22 +69,23 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
-          backgroundColor: primaryColors.grey,
-          width: "225px",
+          backgroundColor: "#1F2731",
+          width: "300px",
+          position: "relative"
+
         }
       }
     },
     MuiCardMedia: {
       styleOverrides: {
         img: {
-          display: "flex",
-          height: 120,
-          width: "225px",
+          width: "300px",
+          position: "absolute"
         }
       }
     },
-  },
 
+  },
 });
 
 

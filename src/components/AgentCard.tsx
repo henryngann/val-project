@@ -1,7 +1,9 @@
+import { List } from "@mui/material";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import { red } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 
 interface AgentProps {
@@ -29,6 +31,7 @@ export default function AgentCard({
               padding: 1,
   */
 
+
   //TODO increase widith of these cards
   //Add bullet points
   //Position absolute, scale it, make head above cards.
@@ -48,8 +51,8 @@ export default function AgentCard({
           </Box>
         </CardContent>
       </Box>
-      <CardMedia sx={{ position: "relative", width: 300 }}>
-        <img src={agentImage} style={{ position: "absolute", width: "100%" }} />
+      <CardMedia sx={{ position: "relative", width: "100%", overflow: "visible" }}>
+        <img src={agentImage} style={{ position: "absolute", width: "100%", scale: "2 2", bottom: "-20px", maxHeight: "220px" }} alt="Agent Full Portrait" />
       </CardMedia>
     </Card>
   );

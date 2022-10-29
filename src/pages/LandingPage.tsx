@@ -1,6 +1,7 @@
 import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import AgentCard from "../components/AgentCard";
+import AgentSquare from "../components/AgentSquare";
 import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
@@ -30,11 +31,19 @@ const LandingPage = () => {
       <Grid item xs={12}>
         <ValLogo />
       </Grid>
-
-      <Grid item xs={12}>
+      <Grid xs={5.5}>
+        {agents?.data.map((it) => {
+          return (
+            <AgentSquare
+              agentIcon={it.displayIconSmall}
+            />
+          );
+        })}
+      </Grid>
+      < Grid item xs={12} >
         <Footer />
       </Grid>
-    </Grid>
+    </Grid >
   );
 };
 
