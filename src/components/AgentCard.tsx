@@ -1,7 +1,9 @@
+import { List } from "@mui/material";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import { red } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
 
 interface AgentProps {
@@ -29,6 +31,7 @@ export default function AgentCard({
               padding: 1,
   */
 
+
   //TODO increase widith of these cards
   //Add bullet points
   //Position absolute, scale it, make head above cards.
@@ -42,15 +45,15 @@ export default function AgentCard({
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography variant="h5">{name}</Typography>
           <Typography variant="h6">{agentName}</Typography>
-          <Box sx={{}}>
+          <Box sx={{ display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "space-between" }}>
             {/* Make this Box, a row and make these just like the design. Style it once in the design. */}
-            <Typography>{ability1}</Typography>
-            <Typography>{ability2}</Typography>
+            <Typography variant="caption" sx={{ display: "list-item", color: "#FF4654" }}>{ability1}</Typography>
+            <Typography variant="caption" sx={{ display: "list-item", color: "#FF4654" }}>{ability2}</Typography>
           </Box>
         </CardContent>
       </Box>
-      <CardMedia sx={{ position: "relative", width: 300 }}>
-        <img src={agentImage} style={{ position: "absolute", width: "100%" }} />
+      <CardMedia sx={{ position: "relative", width: "100%", overflow: "visible" }}>
+        <img src={agentImage} style={{ position: "absolute", width: "100%", scale: "2 2", bottom: "-20px", maxHeight: "220px" }} alt="Agent Full Portrait" />
       </CardMedia>
     </Card>
   );

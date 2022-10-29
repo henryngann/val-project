@@ -11,6 +11,7 @@ export const ValLogo = () => {
         height: "auto",
         maxHeight: "20vh",
       }}
+      alt="Main Valorant Logo"
     />
   );
 };
