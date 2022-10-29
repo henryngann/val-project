@@ -45,10 +45,9 @@ export default function AgentCard({
         <CardContent sx={{ flex: "1 0 auto" }}>
           <Typography variant="h5">{name}</Typography>
           <Typography variant="h6">{agentName}</Typography>
-          <Box sx={{ display: "flex", flexWrap: "wrap", flexDirection: "row", justifyContent: "space-between" }}>
-            {/* Make this Box, a row and make these just like the design. Style it once in the design. */}
-            <Typography variant="caption" sx={{ display: "list-item", color: "#FF4654" }}>{ability1}</Typography>
-            <Typography variant="caption" sx={{ display: "list-item", color: "#FF4654" }}>{ability2}</Typography>
+          <Box sx={{}}>
+            <Typography>{ability1}</Typography>
+            <Typography>{ability2}</Typography>
           </Box>
         </CardContent>
       </Box>
