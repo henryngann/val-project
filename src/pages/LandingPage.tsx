@@ -1,6 +1,5 @@
 import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
-import AgentCard from "../components/AgentCard";
 import AgentSquare from "../components/AgentSquare";
 import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
@@ -31,19 +30,19 @@ const LandingPage = () => {
       <Grid item xs={12}>
         <ValLogo />
       </Grid>
-      <Grid xs={5.5}>
+      <Grid container item xs={6} xl={8} justifyContent="space-between">
         {agents?.data.map((it) => {
           return (
-            <AgentSquare
-              agentIcon={it.displayIconSmall}
-            />
+            <Grid item xl={1}>
+              <AgentSquare agentIcon={it.displayIconSmall} />
+            </Grid>
           );
         })}
       </Grid>
-      < Grid item xs={12} >
+      <Grid item xs={12}>
         <Footer />
       </Grid>
-    </Grid >
+    </Grid>
   );
 };
 

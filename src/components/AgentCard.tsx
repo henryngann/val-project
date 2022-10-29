@@ -1,11 +1,9 @@
-import { List } from "@mui/material";
+import { Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
-import CardMedia from "@mui/material/CardMedia";
-import { red } from "@mui/material/colors";
 import Typography from "@mui/material/Typography";
-
+import React from "react";
 interface AgentProps {
   name?: string;
   agentName?: string;
@@ -23,37 +21,53 @@ export default function AgentCard({
   agentName,
   alt,
 }: AgentProps) {
-  /*
-   color: "red",
-              fontSize: 8,
-              display: "flex",
-              justifyContent: "center",
-              padding: 1,
-  */
-
-
-  //TODO increase widith of these cards
   //Add bullet points
-  //Position absolute, scale it, make head above cards.
-  //add variants to typography
-  //Set the background of these cards, get color values and set it background of car
-  //add an alt prop to the image
+  //play a round with scale optioanl
 
   return (
-    <Card sx={{ display: "flex" }}>
-      <Box sx={{ display: "flex", flexDirection: "column" }}>
-        <CardContent sx={{ flex: "1 0 auto" }}>
+    <Card
+      sx={{
+        display: "flex",
+        width: "450px",
+        height: "200px",
+        zIndex: -1,
+      }}
+    >
+      <CardContent sx={{ width: "50%" }}>
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+          }}
+        >
           <Typography variant="h5">{name}</Typography>
           <Typography variant="h6">{agentName}</Typography>
-          <Box sx={{}}>
-            <Typography>{ability1}</Typography>
-            <Typography>{ability2}</Typography>
-          </Box>
-        </CardContent>
+          <Stack
+            display="flex"
+            flexDirection="row"
+            alignItems="baseline"
+            justifyContent="space-between"
+            spacing={4}
+            sx={{ width: "100%" }}
+          >
+            <Typography variant="body1">{ability1}</Typography>
+            <Typography variant="body1">{ability2}</Typography>
+          </Stack>
+        </Box>
+      </CardContent>
+      <Box sx={{ position: "relative", width: 200, zIndex: 999 }}>
+        <img
+          src={agentImage}
+          alt={alt}
+          style={{
+            scale: "2 2",
+            top: -50,
+            width: "100%",
+            position: "absolute",
+            overflow: "visible",
+          }}
+        />
       </Box>
-      <CardMedia sx={{ position: "relative", width: "100%", overflow: "visible" }}>
-        <img src={agentImage} style={{ position: "absolute", width: "100%", scale: "2 2", bottom: "-20px", maxHeight: "220px" }} alt="Agent Full Portrait" />
-      </CardMedia>
     </Card>
   );
 }
