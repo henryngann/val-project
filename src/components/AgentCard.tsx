@@ -1,4 +1,4 @@
-import { Stack } from "@mui/material";
+import { Grid, Stack } from "@mui/material";
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -25,49 +25,59 @@ export default function AgentCard({
   //play a round with scale optioanl
 
   return (
-    <Card
-      sx={{
-        display: "flex",
-        width: "450px",
-        height: "200px",
-        zIndex: -1,
-      }}
-    >
-      <CardContent sx={{ width: "50%" }}>
-        <Box
+    <Grid
+      container
+      display="flex"
+      direction={"row"}
+      justifyContent="center"
+      alignItems="center">
+      <Grid item xs={6} xl={1}>
+        <Card
           sx={{
             display: "flex",
-            flexDirection: "column",
+            width: "450px",
+            height: "200px",
+            zIndex: -1,
+            overflow: "visible"
           }}
         >
-          <Typography variant="h5">{name}</Typography>
-          <Typography variant="h6">{agentName}</Typography>
-          <Stack
-            display="flex"
-            flexDirection="row"
-            alignItems="baseline"
-            justifyContent="space-between"
-            spacing={4}
-            sx={{ width: "100%" }}
-          >
-            <Typography variant="body1">{ability1}</Typography>
-            <Typography variant="body1">{ability2}</Typography>
-          </Stack>
-        </Box>
-      </CardContent>
-      <Box sx={{ position: "relative", width: 200, zIndex: 999 }}>
-        <img
-          src={agentImage}
-          alt={alt}
-          style={{
-            scale: "2 2",
-            top: -50,
-            width: "100%",
-            position: "absolute",
-            overflow: "visible",
-          }}
-        />
-      </Box>
-    </Card>
+          <CardContent sx={{ width: "50%" }}>
+            <Box
+              sx={{
+                display: "flex",
+                flexDirection: "column",
+              }}
+            >
+              <Typography variant="h5">{name}</Typography>
+              <Typography variant="h6">{agentName}</Typography>
+              <Stack
+                display="flex"
+                flexDirection="row"
+                alignItems="baseline"
+                justifyContent="space-between"
+                spacing={6}
+                sx={{ width: "100%" }}
+              >
+                <Typography variant="body1" sx={{ display: "list-item", color: "#FF4654" }}>{ability1}</Typography>
+                <Typography variant="body1" sx={{ display: "list-item", color: "#FF4654" }}>{ability2}</Typography>
+              </Stack>
+            </Box>
+          </CardContent>
+          <Box sx={{ position: "relative", width: 140, zIndex: 999 }}>
+            <img
+              src={agentImage}
+              alt={alt}
+              style={{
+                scale: "2 1",
+                top: -40,
+                width: "100%",
+                height: "120%",
+                position: "absolute",
+              }}
+            />
+          </Box>
+        </Card>
+      </Grid>
+    </Grid>
   );
 }
