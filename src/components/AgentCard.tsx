@@ -24,13 +24,27 @@ export default function AgentCard({
   //Add bullet points
   //play a round with scale optioanl
 
+  //   <Box sx={{ position: "relative", width: 140, zIndex: 999 }}>
+  //   <img
+  //     src={agentImage}
+  //     alt={alt}
+  //     style={{
+  //       scale: "2 1",
+  //       top: -40,
+  //       width: "100%",
+  //       height: "120%",
+  //       position: "absolute",
+  //     }}
+  //   />
+  // </Box>
   return (
     <Grid
       container
       display="flex"
       direction={"row"}
       justifyContent="center"
-      alignItems="center">
+      alignItems="center"
+    >
       <Grid item xs={6} xl={1}>
         <Card
           sx={{
@@ -38,7 +52,7 @@ export default function AgentCard({
             width: "450px",
             height: "200px",
             zIndex: -1,
-            overflow: "visible"
+            overflow: "visible",
           }}
         >
           <CardContent sx={{ width: "50%" }}>
@@ -58,24 +72,11 @@ export default function AgentCard({
                 spacing={6}
                 sx={{ width: "100%" }}
               >
-                <Typography variant="body1" sx={{ display: "list-item", color: "#FF4654" }}>{ability1}</Typography>
-                <Typography variant="body1" sx={{ display: "list-item", color: "#FF4654" }}>{ability2}</Typography>
+                <Typography variant="body1">• {ability1}</Typography>
+                <Typography variant="body1">• {ability2}</Typography>
               </Stack>
             </Box>
           </CardContent>
-          <Box sx={{ position: "relative", width: 140, zIndex: 999 }}>
-            <img
-              src={agentImage}
-              alt={alt}
-              style={{
-                scale: "2 1",
-                top: -40,
-                width: "100%",
-                height: "120%",
-                position: "absolute",
-              }}
-            />
-          </Box>
         </Card>
       </Grid>
     </Grid>

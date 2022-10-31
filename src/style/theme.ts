@@ -1,4 +1,3 @@
-
 import { createTheme } from "@mui/material/styles";
 
 const primaryColors = {
@@ -61,31 +60,18 @@ export const theme = createTheme({
     },
     MuiTypography: {
       styleOverrides: {
-        root: {
-          color: primaryColors.light,
-        },
+        root: {},
       },
     },
     MuiCard: {
       styleOverrides: {
         root: {
           backgroundColor: "#1F2731",
-          width: "300px",
-
-        }
-      }
+        },
+      },
     },
-    MuiCardMedia: {
-      styleOverrides: {
-        img: {
-          width: "300px",
-        }
-      }
-    },
-
   },
 });
-
 
 theme.typography.h1 = {
   fontSize: "5.5rem",
@@ -131,6 +117,15 @@ theme.typography.h3 = {
 theme.typography.h4 = {
   fontSize: `25px`,
 };
+theme.typography.h5 = {
+  color: primaryColors.light,
+};
+theme.typography.h6 = {
+  color: primaryColors.light,
+};
+theme.typography.body1 = {
+  color: primaryColors.light,
+};
 theme.typography.subtitle1 = {
   fontSize: "1rem",
   fontWeight: 300,
@@ -153,6 +148,7 @@ theme.typography.subtitle1 = {
   },
 };
 theme.typography.subtitle2 = {
+  color: "#000000",
   fontSize: `0.875rem`,
   fontWeight: 300,
 };

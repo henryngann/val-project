@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 
 import AgentCard from "../components/AgentCard";
+import AgentCardDetails from "../components/AgentCardDetails";
 import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
@@ -19,8 +20,6 @@ const AgentPage = () => {
     fetchCall().then((result) => setAgents(result as Root)); // eslint-disable-next-line
   }, []);
 
-  //TODO Style the Agent Card like the Design
-  //TODO 2 Abilitie Name just like the design in this card.
   return (
     <Grid
       container
@@ -34,29 +33,47 @@ const AgentPage = () => {
       <Grid item xs={12} component="figure">
         <ValLogo />
       </Grid>
-      {/*TODO // Use Grids to space the cards out evenly */}
+
       <Grid
         component="article"
         container
+        flexDirection="row"
         justifyContent="space-between"
         item
         xs={8}
+        sm={10}
+        md={12}
+        lg={10}
         xl={12}
-        spacing={4}
+        sx={{ backgroundColor: "green" }}
+        spacing={2}
       >
-        {agents?.data.map((it) => {
-          return (
-            <Grid item xl={3}>
-              <AgentCard
-                agentImage={it.fullPortraitV2}
-                name={it.role?.displayName}
-                agentName={it.displayName}
-                ability1={it.abilities[1].displayName}
-                ability2={it.abilities[2].displayName}
-              />
-            </Grid>
-          );
-        })}
+        <Grid container item xl={12}>
+          <Grid item xl={6}>
+            {/* Hard Code data for now */}
+            <AgentCard
+              agentImage={agents?.data[0].displayIcon}
+              name={agents?.data[0].role?.displayName}
+              agentName={agents?.data[0].displayName}
+              ability1={agents?.data[0].abilities[1].displayName}
+              ability2={agents?.data[0].abilities[2].displayName}
+            />
+          </Grid>
+          <Grid item xl={4}>
+            {/* pass props in here */}
+
+            <AgentCardDetails />
+          </Grid>
+        </Grid>
+        <Grid item xl={12}>
+          <AgentCard
+            agentImage={agents?.data[0].displayIcon}
+            name={agents?.data[0].role?.displayName}
+            agentName={agents?.data[0].displayName}
+            ability1={agents?.data[0].abilities[1].displayName}
+            ability2={agents?.data[0].abilities[2].displayName}
+          />
+        </Grid>
       </Grid>
       <Grid item xs={12} component="footer">
         <Footer />

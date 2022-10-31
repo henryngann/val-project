@@ -30,13 +30,21 @@ const LandingPage = () => {
       <Grid item xs={12}>
         <ValLogo />
       </Grid>
-      <Grid container item xs={12} xl={4} justifyContent="space-between">
+      <Grid
+        container
+        item
+        xs={12}
+        xl={4}
+        justifyContent="space-between"
+        spacing={1}
+      >
         {agents?.data.map((it) => {
           return (
             <Grid item xl={1}>
               <AgentSquare
                 agentImage={it.displayIconSmall}
-                agentName={it.displayName} />
+                agentName={it.displayName}
+              />
             </Grid>
           );
         })}
