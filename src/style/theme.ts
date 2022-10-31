@@ -71,7 +71,6 @@ export const theme = createTheme({
         root: {
           backgroundColor: "#1F2731",
           width: "300px",
-          position: "relative"
 
         }
       }
@@ -80,7 +79,6 @@ export const theme = createTheme({
       styleOverrides: {
         img: {
           width: "300px",
-          position: "absolute"
         }
       }
     },
