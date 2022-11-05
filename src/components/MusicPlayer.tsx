@@ -1,25 +1,34 @@
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
 import { Button } from "@mui/material";
 
 const MusicPlayer = () => {
-  //path to bgmusic.mp3
-  const [isPlaying, setIsPlaying] = useState(true);
-
   const musicSrc = "../assets/bgmusic.mp3";
-  const audio = new Audio(musicSrc);
+  const [audioStatus, changeAudioStatus] = useState(false);
+  const myRef = useRef<any>();
 
-  const handlePlay = () => {
-    setIsPlaying(!isPlaying);
-    if (isPlaying) {
-      audio.play();
-    } else {
-      audio.pause();
-    }
+  const startAudio = () => {
+    myRef.current.play();
+
+    changeAudioStatus(true);
   };
 
-  return <Button>{isPlaying ? <VolumeUpIcon /> : <VolumeMuteIcon />} </Button>;
+  const pauseAudio = () => {
+    myRef.current.pause();
+    changeAudioStatus(false);
+  };
+
+  return (
+    <>
+      <audio ref={myRef} src={musicSrc} />
+      {audioStatus ? (
+        <button onClick={pauseAudio}>pause</button>
+      ) : (
+        <button onClick={startAudio}>start</button>
+      )}
+    </>
+  );
 };
 
 export default MusicPlayer;
