@@ -4,7 +4,7 @@ import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
 import { Button } from "@mui/material";
 
 const MusicPlayer = () => {
-  const musicSrc = "../assets/bgmusic.mp3";
+  const musicSrc = "../assets/bgmusic2.mp3";
   const [audioStatus, changeAudioStatus] = useState(false);
   const myRef = useRef<any>();
 
