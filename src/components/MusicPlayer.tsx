@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
 import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
-import { Button } from "@mui/material";
+import { Box, Button } from "@mui/material";
 
 const MusicPlayer = () => {
   const musicSrc = "../assets/bgmusic2.mp3";
@@ -20,14 +20,14 @@ const MusicPlayer = () => {
   };
 
   return (
-    <>
+    <Box>
       <audio ref={myRef} src={musicSrc} />
       {audioStatus ? (
         <button onClick={pauseAudio}>pause</button>
       ) : (
         <button onClick={startAudio}>start</button>
       )}
-    </>
+    </Box>
   );
 };
 
