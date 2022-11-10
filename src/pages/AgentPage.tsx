@@ -1,6 +1,5 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
-
 import AgentCard from "../components/AgentCard";
 import AgentCardDetails from "../components/AgentCardDetails";
 import Footer from "../components/Footer";
@@ -52,28 +51,22 @@ const AgentPage = () => {
           <Grid item xl={6}>
             {/* Hard Code data for now */}
             <AgentCard
-              agentImage={agents?.data[0].displayIcon}
-              name={agents?.data[0].role?.displayName}
+              agentImage={agents?.data[18].fullPortrait}
               agentName={agents?.data[0].displayName}
-              ability1={agents?.data[0].abilities[1].displayName}
-              ability2={agents?.data[0].abilities[2].displayName}
+              abilityIcon1={agents?.data[18].abilities[0].displayIcon}
+              abilityIcon2={agents?.data[18].abilities[3].displayIcon}
+              abilityIcon3={agents?.data[18].abilities[1].displayIcon}
+              alt="Agent Full Portrait"
             />
           </Grid>
-          <Grid item xl={4}>
+          <Grid item xl={4} xs={8}>
             {/* pass props in here */}
-
-            <AgentCardDetails />
+            <AgentCardDetails
+              agentPortrait={agents?.data[19].fullPortrait}
+            />
           </Grid>
         </Grid>
-        <Grid item xl={12}>
-          <AgentCard
-            agentImage={agents?.data[0].displayIcon}
-            name={agents?.data[0].role?.displayName}
-            agentName={agents?.data[0].displayName}
-            ability1={agents?.data[0].abilities[1].displayName}
-            ability2={agents?.data[0].abilities[2].displayName}
-          />
-        </Grid>
+
       </Grid>
       <Grid item xs={12} component="footer">
         <Footer />
