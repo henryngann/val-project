@@ -30,27 +30,18 @@ const AgentPage = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Grid item xs={12} component="figure">
+      {/* sm
+        md
+        lg
+        xl */}
+      <Grid item xs={12} component="figure" sx={{ backgroundColor: "teal" }}>
         <ValLogo />
       </Grid>
 
-      <Grid
-        component="article"
-        container
-        flexDirection="row"
-        justifyContent="space-between"
-        item
-        xs={8}
-        sm={10}
-        md={12}
-        lg={10}
-        xl={12}
-        sx={{ backgroundColor: "green" }}
-        spacing={2}
-      >
-        <Grid container item xl={12}>
-          <Grid item xl={6}>
-            {/* Hard Code data for now */}
+      <Grid component="article" container item xs={12}>
+        <Grid container item xl={6} spacing={2} flexDirection="column">
+          {/* Hard Code data for now */}
+          <Grid item>
             <AgentCard
               agentImage={agents?.data[18].fullPortrait}
               agentName={agents?.data[0].displayName}
@@ -59,19 +50,20 @@ const AgentPage = () => {
               abilityIcon3={agents?.data[18].abilities[1].displayIcon}
               alt="Agent Full Portrait"
             />
+          </Grid>
+          <Grid item>
             <StatsCard />
           </Grid>
-          <Grid item xl={4} xs={8}>
-            {/* pass props in here */}
-            <AgentCardDetails
-              agent1Portrait={agents?.data[19].fullPortrait}
-              agent1Name={agents?.data[19].displayName}
-              agent2Portrait={agents?.data[17].fullPortrait}
-              agent2Name={agents?.data[17].displayName}
-            />
-          </Grid>
         </Grid>
-
+        <Grid item xl={4} xs={8}>
+          {/* pass props in here */}
+          <AgentCardDetails
+            agent1Portrait={agents?.data[19].fullPortrait}
+            agent1Name={agents?.data[19].displayName}
+            agent2Portrait={agents?.data[17].fullPortrait}
+            agent2Name={agents?.data[17].displayName}
+          />
+        </Grid>
       </Grid>
       <Grid item xs={12} component="footer">
         <Footer />

@@ -4,7 +4,7 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import React from "react";
-import CSS from 'csstype';
+import CSS from "csstype";
 interface AgentProps {
   name?: string;
   agentName?: string;
@@ -17,22 +17,20 @@ interface AgentProps {
 
 const abilitySize: CSS.Properties = {
   width: "25%",
-
 };
 const abilityStyles: CSS.Properties = {
   display: "flex",
-  marginTop: "10px"
+  marginTop: "10px",
 };
 
 const abilitySpacing: CSS.Properties = {
   marginLeft: "7px",
-  fontWeight: "bold"
-
-}
+  fontWeight: "bold",
+};
 
 const bolding: CSS.Properties = {
-  fontWeight: "bold"
-}
+  fontWeight: "bold",
+};
 
 export default function AgentCard({
   agentImage,
@@ -45,22 +43,13 @@ export default function AgentCard({
   //Add bullet points
   //play a round with scale optioanl
 
-
-
-
   return (
-    <Grid
-      container
-      display="flex"
-      direction={"row"}
-      justifyContent="center"
-      alignItems="center"
-    >
-      <Grid item xs={8} xl={1}>
+    <Grid container display="flex" direction={"row"}>
+      <Grid item xs={12} xl={12}>
         <Card
           sx={{
             display: "flex",
-            width: "450px",
+            width: "100%",
             height: "250px",
             zIndex: -1,
             overflow: "visible",
@@ -78,11 +67,17 @@ export default function AgentCard({
                 sx={{
                   display: "flex",
                   alignItems: "center",
-                  padding: "10px 0px"
+                  padding: "10px 0px",
                 }}
               >
-                <Stack direction="row" spacing={2} sx={{ display: "flex", alignItems: "center" }}>
-                  <Typography variant="h4" sx={{ color: "#FF4654" }}>{agentName?.toUpperCase()}</Typography>
+                <Stack
+                  direction="row"
+                  spacing={2}
+                  sx={{ display: "flex", alignItems: "center" }}
+                >
+                  <Typography variant="h4" sx={{ color: "#FF4654" }}>
+                    {agentName?.toUpperCase()}
+                  </Typography>
                   <Typography variant="h6"> Played 354H 46M</Typography>
                 </Stack>
               </Box>
@@ -92,54 +87,53 @@ export default function AgentCard({
                 alignItems="baseline"
                 justifyContent="space-between"
                 spacing={2}
-                sx={{ width: "100%", borderTop: "1px solid grey" }}>
-                <Box
-                  display="flex"
-                  flexDirection="column">
+                sx={{ width: "100%", borderTop: "1px solid grey" }}
+              >
+                <Box display="flex" flexDirection="column">
                   <Typography variant="body2">Win Ratio</Typography>
-                  <Typography variant="body2" sx={bolding}>62.11%</Typography>
+                  <Typography variant="body2" sx={bolding}>
+                    62.11%
+                  </Typography>
                 </Box>
-                <Box
-                  display="flex"
-                  flexDirection="column">
+                <Box display="flex" flexDirection="column">
                   <Typography variant="body2">K/D Ratio</Typography>
-                  <Typography variant="body2" sx={bolding}>1.14</Typography>
+                  <Typography variant="body2" sx={bolding}>
+                    1.14
+                  </Typography>
                 </Box>
-                <Box
-                  display="flex"
-                  flexDirection="column">
+                <Box display="flex" flexDirection="column">
                   <Typography variant="body2">Win Ratio</Typography>
-                  <Typography variant="body2" style={bolding}>138.2</Typography>
+                  <Typography variant="body2" style={bolding}>
+                    138.2
+                  </Typography>
                 </Box>
               </Stack>
               <Stack
                 sx={{ height: "30px", display: "flex", justifyContent: "end" }}
               >
-                <Typography variant="body2" >
-                  Ability Kills/Match
-                </Typography>
+                <Typography variant="body2">Ability Kills/Match</Typography>
               </Stack>
               <Box sx={{ width: "100%", display: "flex" }}>
                 <Box sx={abilityStyles}>
-                  <img
-                    src={abilityIcon1}
-                    style={abilitySize}
-                  />
-                  <Typography variant="body2" sx={abilitySpacing}> 0.33 </Typography>
+                  <img src={abilityIcon1} style={abilitySize} />
+                  <Typography variant="body2" sx={abilitySpacing}>
+                    {" "}
+                    0.33{" "}
+                  </Typography>
                 </Box>
                 <Box sx={abilityStyles}>
-                  <img
-                    src={abilityIcon2}
-                    style={abilitySize}
-                  />
-                  <Typography variant="body2" sx={abilitySpacing}> 0.78 </Typography>
+                  <img src={abilityIcon2} style={abilitySize} />
+                  <Typography variant="body2" sx={abilitySpacing}>
+                    {" "}
+                    0.78{" "}
+                  </Typography>
                 </Box>
                 <Box sx={abilityStyles}>
-                  <img
-                    src={abilityIcon3}
-                    style={abilitySize}
-                  />
-                  <Typography variant="body2" sx={abilitySpacing}> 4.82 </Typography>
+                  <img src={abilityIcon3} style={abilitySize} />
+                  <Typography variant="body2" sx={abilitySpacing}>
+                    {" "}
+                    4.82{" "}
+                  </Typography>
                 </Box>
               </Box>
             </Box>
@@ -159,6 +153,6 @@ export default function AgentCard({
           </Box>
         </Card>
       </Grid>
-    </Grid >
+    </Grid>
   );
 }
