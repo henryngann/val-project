@@ -58,10 +58,8 @@ const AgentPage = () => {
         <Grid item xl={4} xs={8}>
           {/* pass props in here */}
           <AgentCardDetails
-            agent1Portrait={agents?.data[19].fullPortrait}
-            agent1Name={agents?.data[19].displayName}
-            agent2Portrait={agents?.data[17].fullPortrait}
-            agent2Name={agents?.data[17].displayName}
+            agentPortrait={agents?.data[19].fullPortrait}
+            agentName={agents?.data[19].displayName}
           />
         </Grid>
       </Grid>
