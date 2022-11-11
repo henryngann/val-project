@@ -25,7 +25,13 @@ const abilityStyles: CSS.Properties = {
 };
 
 const abilitySpacing: CSS.Properties = {
-  marginLeft: "7px"
+  marginLeft: "7px",
+  fontWeight: "bold"
+
+}
+
+const bolding: CSS.Properties = {
+  fontWeight: "bold"
 }
 
 export default function AgentCard({
@@ -69,70 +75,71 @@ export default function AgentCard({
             >
               <Typography variant="h5">Top Agent</Typography>
               <Box
-                display="flex"
-                alignItems="center"
-                padding="10px 0px"
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "10px 0px"
+                }}
               >
-                <Typography variant="h4" style={{ color: "#FF4654" }}>{agentName}</Typography>
-                <Typography variant="h6" sx={{ marginLeft: 1 }}> Played 354H 46M</Typography>
+                <Stack direction="row" spacing={2} sx={{ display: "flex", alignItems: "center" }}>
+                  <Typography variant="h4" sx={{ color: "#FF4654" }}>{agentName?.toUpperCase()}</Typography>
+                  <Typography variant="h6"> Played 354H 46M</Typography>
+                </Stack>
               </Box>
               <Stack
                 display="flex"
                 flexDirection="row"
                 alignItems="baseline"
                 justifyContent="space-between"
-                borderTop="1px solid grey"
                 spacing={2}
-                sx={{ width: "100%" }}>
+                sx={{ width: "100%", borderTop: "1px solid grey" }}>
                 <Box
                   display="flex"
                   flexDirection="column">
                   <Typography variant="body2">Win Ratio</Typography>
-                  <Typography variant="body2">62.11%</Typography>
+                  <Typography variant="body2" sx={bolding}>62.11%</Typography>
                 </Box>
                 <Box
                   display="flex"
                   flexDirection="column">
-                  <Typography variant="body2"> K/D Ratio</Typography>
-                  <Typography variant="body2">1.14</Typography>
+                  <Typography variant="body2">K/D Ratio</Typography>
+                  <Typography variant="body2" sx={bolding}>1.14</Typography>
                 </Box>
                 <Box
                   display="flex"
                   flexDirection="column">
                   <Typography variant="body2">Win Ratio</Typography>
-                  <Typography variant="body2">138.2</Typography>
+                  <Typography variant="body2" style={bolding}>138.2</Typography>
                 </Box>
               </Stack>
               <Stack
-                display="flex"
-                flexDirection="row"
-                marginTop="15px"
+                sx={{ height: "30px", display: "flex", justifyContent: "end" }}
               >
-                <Typography variant="body2">
+                <Typography variant="body2" >
                   Ability Kills/Match
                 </Typography>
               </Stack>
-              <Box style={{ width: "100%", display: "flex" }}>
-                <Box style={abilityStyles}>
+              <Box sx={{ width: "100%", display: "flex" }}>
+                <Box sx={abilityStyles}>
                   <img
                     src={abilityIcon1}
                     style={abilitySize}
                   />
-                  <Typography variant="body2" style={abilitySpacing}> 0.33 </Typography>
+                  <Typography variant="body2" sx={abilitySpacing}> 0.33 </Typography>
                 </Box>
-                <Box style={abilityStyles}>
+                <Box sx={abilityStyles}>
                   <img
                     src={abilityIcon2}
                     style={abilitySize}
                   />
-                  <Typography variant="body2" style={abilitySpacing}> 0.78 </Typography>
+                  <Typography variant="body2" sx={abilitySpacing}> 0.78 </Typography>
                 </Box>
-                <Box style={abilityStyles}>
+                <Box sx={abilityStyles}>
                   <img
                     src={abilityIcon3}
                     style={abilitySize}
                   />
-                  <Typography variant="body2" style={abilitySpacing}> 4.82 </Typography>
+                  <Typography variant="body2" sx={abilitySpacing}> 4.82 </Typography>
                 </Box>
               </Box>
             </Box>

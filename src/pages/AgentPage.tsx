@@ -5,6 +5,7 @@ import AgentCardDetails from "../components/AgentCardDetails";
 import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
+import StatsCard from "../components/StatsCard";
 
 const AgentPage = () => {
   const sectionStyles = {
@@ -58,11 +59,15 @@ const AgentPage = () => {
               abilityIcon3={agents?.data[18].abilities[1].displayIcon}
               alt="Agent Full Portrait"
             />
+            <StatsCard />
           </Grid>
           <Grid item xl={4} xs={8}>
             {/* pass props in here */}
             <AgentCardDetails
-              agentPortrait={agents?.data[19].fullPortrait}
+              agent1Portrait={agents?.data[19].fullPortrait}
+              agent1Name={agents?.data[19].displayName}
+              agent2Portrait={agents?.data[17].fullPortrait}
+              agent2Name={agents?.data[17].displayName}
             />
           </Grid>
         </Grid>
