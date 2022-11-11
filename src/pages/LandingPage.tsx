@@ -2,6 +2,7 @@ import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import AgentSquare from "../components/AgentSquare";
 import Footer from "../components/Footer";
+import MusicPlayer from "../components/MusicPlayer";
 import { ValLogo } from "../components/ValLogo";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
@@ -29,6 +30,7 @@ const LandingPage = () => {
     >
       <Grid item xs={12}>
         <ValLogo />
+        <MusicPlayer />
       </Grid>
       <Grid
         container
