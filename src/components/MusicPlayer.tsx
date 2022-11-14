@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
-import VolumeUpIcon from "@mui/icons-material/VolumeUp";
-import VolumeMuteIcon from "@mui/icons-material/VolumeMute";
+
 import { Box, Button } from "@mui/material";
 
 const MusicPlayer = () => {
@@ -18,7 +17,7 @@ const MusicPlayer = () => {
     myRef.current.pause();
     changeAudioStatus(false);
   };
-  //Mouse over
+
   return (
     <Box>
       <audio ref={myRef} src={musicSrc} />
