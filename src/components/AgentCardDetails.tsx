@@ -15,17 +15,14 @@ const paperStyle: CSS.Properties = {
   backgroundColor: "#191B2A",
 };
 
-const paperCenter: CSS.Properties = {
-  display: "flex",
-  alignItems: "center",
-};
+
 
 export default function AgentCardDetails({
   agentPortrait,
   agentName,
 }: AgentProp) {
   return (
-    <Grid item xs={6} md={4} xl={3}>
+    <Grid item xs={12} md={4} xl={12}>
       <Paper elevation={9} style={paperStyle}>
         <img
           src={agentPortrait}
@@ -34,58 +31,19 @@ export default function AgentCardDetails({
             top: -20,
             height: "100%",
             position: "absolute",
-            left: 45,
+            left: 65,
           }}
         />
-        <Box>
-          <Typography variant="h4" sx={paperCenter}>
+        <Stack direction={"column"} spacing={4} sx={{ display: "flex" }}>
+          <Typography variant="h4" >
             {agentName?.toLocaleUpperCase()}
           </Typography>
-          <Typography variant="body2" sx={paperCenter}>
-            {" "}
+          <Typography variant="body2" sx={{ display: "flex", flexDirection: "column", height: "100px" }} >
             Win Ratio
+            60.23
           </Typography>
-          <Typography variant="body2" sx={paperCenter}>
-            60.23%
-          </Typography>
-        </Box>
+        </Stack>
       </Paper>
-      {/*  */}
-      {/* <Paper elevation={3} style={paperStyle}>
-        <Typography
-          variant="h4"
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            fontSize: "22px",
-          }}
-        >
-          Rating
-        </Typography>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            height: 80,
-          }}
-        >
-          <img
-            src="diamond2.jpg"
-            style={{
-              width: 60,
-              backgroundColor: "#191B2A",
-              backgroundImage: "none",
-            }}
-          />
-        </Box>
-        <Typography
-          variant="h5"
-          sx={{ display: "flex", justifyContent: "center" }}
-        >
-          Diamond 3
-        </Typography>
-      </Paper> */}
     </Grid>
   );
 }

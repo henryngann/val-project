@@ -18,13 +18,17 @@ const winCenter: CSS.Properties = {
 };
 
 const boxSize: CSS.Properties = {
-    width: "25%"
+    width: "25%",
+    display: "flex",
+    flexDirection: "column"
 
 }
 
 const bolding: CSS.Properties = {
     fontWeight: "bold"
 }
+
+
 
 export default function StatsCard() {
     //Add bullet points
@@ -70,7 +74,7 @@ export default function StatsCard() {
                                     flexDirection: "row",
                                     justifyContent: "space-between"
                                 }}>
-                                <Stack direction="column" sx={{ display: "flex", alignItems: "center", }}>
+                                <Stack direction="column" sx={{ display: "flex", alignItems: "center" }}>
                                     <Typography variant="h6">Win Rate</Typography>
                                     <Typography variant="h4">62.5%</Typography>
                                 </Stack>
@@ -89,22 +93,16 @@ export default function StatsCard() {
                                 spacing={2}
                                 sx={{ width: "100%" }}>
                                 <Box
-                                    display="flex"
-                                    flexDirection="column"
                                     sx={boxSize}>
                                     <Typography variant="body2">Kills</Typography>
                                     <Typography variant="body2" sx={bolding}>14,462</Typography>
                                 </Box>
                                 <Box
-                                    display="flex"
-                                    flexDirection="column"
                                     sx={boxSize}>
                                     <Typography variant="body2">Headshots</Typography>
                                     <Typography variant="body2" sx={bolding}>7,124</Typography>
                                 </Box>
                                 <Box
-                                    display="flex"
-                                    flexDirection="column"
                                     sx={boxSize}>
                                     <Typography variant="body2">Deaths</Typography>
                                     <Typography variant="body2" style={bolding}>11,531</Typography>
@@ -118,22 +116,19 @@ export default function StatsCard() {
                                 spacing={2}
                                 sx={{ width: "100%" }}>
                                 <Box
-                                    display="flex"
-                                    flexDirection="column"
+
                                     sx={boxSize}>
                                     <Typography variant="body2">Kills/Round</Typography>
                                     <Typography variant="body2" sx={bolding}>0.8</Typography>
                                 </Box>
                                 <Box
-                                    display="flex"
-                                    flexDirection="column"
+
                                     sx={boxSize}>
                                     <Typography variant="body2">Aces</Typography>
                                     <Typography variant="body2" sx={bolding}>24</Typography>
                                 </Box>
                                 <Box
-                                    display="flex"
-                                    flexDirection="column"
+
                                     sx={boxSize}>
                                     <Typography variant="body2">Most Kills</Typography>
                                     <Typography variant="body2" style={bolding}>38</Typography>

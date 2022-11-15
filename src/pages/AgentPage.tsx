@@ -6,6 +6,21 @@ import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 import StatsCard from "../components/StatsCard";
+import RankCard from "../components/RankCard";
+import WeaponCard from "../components/WeaponCard";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
+
+
+
+function MyComponent() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('xs'));
+
+  return <span>{`theme.breakpoints.up('xs') matches: ${matches}`}</span>;
+}
+
+
 
 const AgentPage = () => {
   const sectionStyles = {
@@ -34,14 +49,14 @@ const AgentPage = () => {
         md
         lg
         xl */}
-      <Grid item xs={12} component="figure" sx={{ backgroundColor: "teal" }}>
+      <Grid item xs={12} sm={6} md={6} xl={12} component="figure" >
         <ValLogo />
       </Grid>
 
-      <Grid component="article" container item xs={12}>
-        <Grid container item xl={6} spacing={2} flexDirection="column">
+      <Grid component="article" container item xs={12} >
+        <Grid container item xs={6} xl={4} spacing={2} flexDirection="column">
           {/* Hard Code data for now */}
-          <Grid item>
+          <Grid item xs={6} xl={4}>
             <AgentCard
               agentImage={agents?.data[18].fullPortrait}
               agentName={agents?.data[0].displayName}
@@ -51,22 +66,46 @@ const AgentPage = () => {
               alt="Agent Full Portrait"
             />
           </Grid>
-          <Grid item>
+          <Grid item xs={6} sm={6} xl={4}>
             <StatsCard />
           </Grid>
         </Grid>
-        <Grid item xl={4} xs={8}>
+        <Grid container xl={2} xs={8}
+          sx={{ border: "1px solid red" }}
+        >
           {/* pass props in here */}
-          <AgentCardDetails
-            agentPortrait={agents?.data[19].fullPortrait}
-            agentName={agents?.data[19].displayName}
-          />
+          <Grid item xl={12} xs={12}
+            sx={{ border: "1px solid blue" }}
+          >
+            <AgentCardDetails
+              agentPortrait={agents?.data[19].fullPortrait}
+              agentName={agents?.data[19].displayName}
+            />
+          </Grid>
+          <Grid item xs={8} xl={12}
+            sx={{ border: "1px solid green" }}
+          >
+            <AgentCardDetails
+              agentPortrait={agents?.data[17].fullPortrait}
+              agentName={agents?.data[17].displayName}
+            />
+          </Grid>
+          <Grid item xl={12} xs={12}
+            sx={{ border: "1px solid pink" }}
+          >
+            <RankCard />
+          </Grid>
+          <Grid item xl={12} xs={12}
+            sx={{ border: "1px solid white" }}
+          >
+            <WeaponCard />
+          </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12} component="footer">
         <Footer />
       </Grid>
-    </Grid>
+    </Grid >
   );
 };
 
