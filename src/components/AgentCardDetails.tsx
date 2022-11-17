@@ -10,40 +10,37 @@ interface AgentProp {
 
 const paperStyle: CSS.Properties = {
   position: "relative",
-  width: "100%",
   borderRadius: "10%",
   backgroundColor: "#191B2A",
 };
-
-
 
 export default function AgentCardDetails({
   agentPortrait,
   agentName,
 }: AgentProp) {
+  //add a subtitle prop here for winRatio
   return (
-    <Grid item xs={12} md={4} xl={12}>
-      <Paper elevation={9} style={paperStyle}>
-        <img
-          src={agentPortrait}
-          style={{
-            scale: "2 1",
-            top: -20,
-            height: "100%",
-            position: "absolute",
-            left: 65,
-          }}
-        />
-        <Stack direction={"column"} spacing={4} sx={{ display: "flex" }}>
-          <Typography variant="h4" >
-            {agentName?.toLocaleUpperCase()}
-          </Typography>
-          <Typography variant="body2" sx={{ display: "flex", flexDirection: "column", height: "100px" }} >
-            Win Ratio
-            60.23
-          </Typography>
-        </Stack>
-      </Paper>
-    </Grid>
+    <Paper elevation={9} style={paperStyle}>
+      <img
+        src={agentPortrait}
+        style={{
+          width: "50%",
+          scale: "2 1",
+          top: -20,
+          height: "100%",
+          position: "absolute",
+          left: 95,
+        }}
+      />
+      <Stack direction={"column"} spacing={4} sx={{ display: "flex" }}>
+        <Typography variant="h4">{agentName?.toLocaleUpperCase()}</Typography>
+        <Typography
+          variant="body2"
+          sx={{ display: "flex", flexDirection: "column", height: "100px" }}
+        >
+          Win Ratio 60.23
+        </Typography>
+      </Stack>
+    </Paper>
   );
 }

@@ -8,19 +8,16 @@ import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 import StatsCard from "../components/StatsCard";
 import RankCard from "../components/RankCard";
 import WeaponCard from "../components/WeaponCard";
-import { useTheme } from '@mui/material/styles';
-import useMediaQuery from '@mui/material/useMediaQuery';
-
-
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import GenericCard from "../components/GenericCard";
 
 function MyComponent() {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up('xs'));
+  const matches = useMediaQuery(theme.breakpoints.up("xs"));
 
   return <span>{`theme.breakpoints.up('xs') matches: ${matches}`}</span>;
 }
-
-
 
 const AgentPage = () => {
   const sectionStyles = {
@@ -45,17 +42,20 @@ const AgentPage = () => {
       justifyContent="center"
       alignItems="center"
     >
-      {/* sm
-        md
-        lg
-        xl */}
-      <Grid item xs={12} sm={6} md={6} xl={12} component="figure" >
+      <Grid item xs={12} sm={6} md={6} xl={12} component="figure">
         <ValLogo />
       </Grid>
 
-      <Grid component="article" container item xs={12} >
-        <Grid container item xs={6} xl={4} spacing={2} flexDirection="column">
-          {/* Hard Code data for now */}
+      <Grid component="article" container item xs={12}>
+        <Grid
+          container
+          item
+          xs={6}
+          xl={4}
+          spacing={2}
+          flexDirection="column"
+          sx={{ backgroundColor: "green" }}
+        >
           <Grid item xs={6} xl={4}>
             <AgentCard
               agentImage={agents?.data[18].fullPortrait}
@@ -70,42 +70,41 @@ const AgentPage = () => {
             <StatsCard />
           </Grid>
         </Grid>
-        <Grid container xl={2} xs={8}
-          sx={{ border: "1px solid red" }}
-        >
+        <Grid container xl={2} xs={8} spacing={2}>
           {/* pass props in here */}
-          <Grid item xl={12} xs={12}
-            sx={{ border: "1px solid blue" }}
-          >
+          <Grid item xl={12} xs={12}>
             <AgentCardDetails
               agentPortrait={agents?.data[19].fullPortrait}
               agentName={agents?.data[19].displayName}
             />
           </Grid>
-          <Grid item xs={8} xl={12}
-            sx={{ border: "1px solid green" }}
-          >
+          <Grid item xs={8} xl={12}>
             <AgentCardDetails
               agentPortrait={agents?.data[17].fullPortrait}
               agentName={agents?.data[17].displayName}
             />
           </Grid>
-          <Grid item xl={12} xs={12}
-            sx={{ border: "1px solid pink" }}
-          >
-            <RankCard />
+          <Grid item xl={12} xs={12}>
+            <GenericCard
+              title="Ricky"
+              img="./assets/Diamond2.jpg"
+              subtitle="glasses"
+            />
           </Grid>
-          <Grid item xl={12} xs={12}
-            sx={{ border: "1px solid white" }}
-          >
-            <WeaponCard />
+          <Grid item xl={12} xs={12}>
+            <GenericCard
+              title="Rank"
+              img="./assets/Diamond2.jpg"
+              subtitle="Diamond 2"
+            />{" "}
+            make this the gun card
           </Grid>
         </Grid>
       </Grid>
       <Grid item xs={12} component="footer">
         <Footer />
       </Grid>
-    </Grid >
+    </Grid>
   );
 };
 
