@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import AgentBackground from "../components/AgentBackground";
 import AgentSquare from "../components/AgentSquare";
 import Footer from "../components/Footer";
+import { ValLogo } from "../components/ValLogo";
 
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 type Agent = {
@@ -45,6 +46,9 @@ const LandingPage = () => {
       justifyContent="center"
       alignItems="center"
     >
+      <Grid>
+        <ValLogo />
+      </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} zIndex={-1}>
         <AgentBackground
           agentName={current?.agent}

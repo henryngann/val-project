@@ -1,6 +1,5 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
-
 import AgentCard from "../components/AgentCard";
 import AgentCardDetails from "../components/AgentCardDetails";
 import Footer from "../components/Footer";
