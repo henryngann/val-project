@@ -1,7 +1,6 @@
 import * as React from "react";
-import Typography from "@mui/material/Typography";
-import { Box } from "@mui/system";
-import { motion } from "framer-motion/dist/framer-motion";
+import { motion } from "framer-motion";
+import { Box } from "@mui/material";
 interface AgentPolaroid {
   agentImage: string;
   agentName: string;
@@ -9,7 +8,7 @@ interface AgentPolaroid {
 
 export default function AgentSquare({ agentImage, agentName }: AgentPolaroid) {
   return (
-    <>
+    <Box sx={{ border: "1px solid grey", borderRadius: "2px" }}>
       <motion.img
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
@@ -17,8 +16,7 @@ export default function AgentSquare({ agentImage, agentName }: AgentPolaroid) {
         alt={agentName}
         width={80}
         height={80}
-        style={{ border: "1px solid grey", borderRadius: "2px" }}
       />
-    </>
+    </Box>
   );
 }
