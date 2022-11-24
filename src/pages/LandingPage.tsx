@@ -35,9 +35,9 @@ const LandingPage = () => {
         container
         item
         xs={12}
-        xl={4}
+        xl={11}
         justifyContent="space-between"
-        spacing={1}
+        spacing={3}
       >
         {agents?.data.map((it) => {
           return (

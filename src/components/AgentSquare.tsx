@@ -14,33 +14,18 @@ interface AgentPolaroid {
 
 export default function AgentSquare({ agentImage, agentName }: AgentPolaroid) {
   return (
-    <Card
-      sx={{
-        width: "100%",
-        height: "60%",
-        border: "1px solid grey",
-        borderRadius: "2px",
-      }}
-    >
-      <CardMedia
-        component="img"
-        sx={{ maxHeight: 60, maxWidth: 40 }}
-        image={agentImage}
-        alt={agentName}
-      />
-      <CardContent style={{ backgroundColor: "#fff", padding: 0 }}>
-        <Box
-          sx={{
-            width: "1rem",
-            height: 30,
-            display: "flex",
+    <>
+      <Box component="figure">
+        <img
+          src={agentImage}
+          alt={agentName}
+          width={80}
+          height={80}
+          style={{ border: "1px solid grey", borderRadius: "2px" }}
+        />
+      </Box>
 
-            justifyContent: "center",
-          }}
-        >
-          <Typography variant="subtitle2">{agentName}</Typography>
-        </Box>
-      </CardContent>
-    </Card>
+      <Typography variant="subtitle2">{agentName}</Typography>
+    </>
   );
 }
