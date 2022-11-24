@@ -30,7 +30,6 @@ const LandingPage = () => {
     >
       <Grid item xs={12}>
         <ValLogo />
-        <MusicPlayer />
       </Grid>
       <Grid
         container

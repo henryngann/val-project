@@ -12,12 +12,6 @@ interface AgentPolaroid {
   agentName: string;
 }
 
-//add alt prop here
-//https://mui.com/material-ui/react-card/#main-content #1 Read This
-//Use an appropiate template for the card
-//Hint: maxHeight Increase
-//TODO : Polaroid
-
 export default function AgentSquare({ agentImage, agentName }: AgentPolaroid) {
   return (
     <Card
