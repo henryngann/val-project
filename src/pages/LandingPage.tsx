@@ -1,11 +1,9 @@
-import { CurrencyBitcoin } from "@mui/icons-material";
-import { Box, Grid } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useEffect, useState } from "react";
 import AgentBackground from "../components/AgentBackground";
 import AgentSquare from "../components/AgentSquare";
 import Footer from "../components/Footer";
-import MusicPlayer from "../components/MusicPlayer";
-import { ValLogo } from "../components/ValLogo";
+
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 type Agent = {
   agent?: string;
@@ -47,7 +45,7 @@ const LandingPage = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Grid item xs={12} sm={12} md={12} lg={12} xl={12}>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} zIndex={-1}>
         <AgentBackground
           agentName={current?.agent}
           agentImage={current?.agentPortrait}

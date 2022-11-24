@@ -1,6 +1,5 @@
 import * as React from "react";
 import { motion } from "framer-motion";
-import { Box } from "@mui/material";
 import { MotionStyle } from "framer-motion/dist/framer-motion";
 interface AgentPolaroid {
   agentImage: string;

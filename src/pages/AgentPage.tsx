@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import AgentCard from "../components/AgentCard";
 import AgentCardDetails from "../components/AgentCardDetails";
 import Footer from "../components/Footer";
-import { ValLogo } from "../components/ValLogo";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
 const AgentPage = () => {
