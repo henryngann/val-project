@@ -30,10 +30,6 @@ const AgentPage = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Grid item xs={12} component="figure">
-        <ValLogo />
-      </Grid>
-
       <Grid
         component="article"
         container
