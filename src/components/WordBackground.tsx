@@ -2,26 +2,20 @@ import React from "react";
 
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { Box } from "@mui/material";
 import { motion } from "framer-motion";
 
-import { AnimatePresence, MotionStyle } from "framer-motion/dist/framer-motion";
 interface AgentBackgroundProps {
-  agentImage?: string;
   agentName?: string;
   agentBackground?: string;
-  key?: number;
 }
 const WordBackground = ({
-  agentImage,
   agentName,
   agentBackground,
-  key,
 }: AgentBackgroundProps) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
   const agentBackgroundStyles: React.CSSProperties = {
-    width: matches ? "32rem" : "12rem",
+    width: matches ? "32rem" : "15rem",
     position: "absolute",
     marginLeft: "auto",
     marginRight: "auto",
