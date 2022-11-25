@@ -71,7 +71,6 @@ const AgentPage = () => {
           </Grid>
         </Grid>
         <Grid container xl={2} xs={8} spacing={2}>
-          {/* pass props in here */}
           <Grid item xl={12} xs={12}>
             <AgentCardDetails
               agentPortrait={agents?.data[19].fullPortrait}
