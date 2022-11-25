@@ -17,23 +17,25 @@ export default function AgentBackground({
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
 
   const agentStyles: React.CSSProperties = {
-    width: "24.375rem",
+    width: matches ? "20rem" : "12rem",
     position: "absolute",
     marginLeft: "auto",
     marginRight: "auto",
     left: 0,
     right: 0,
+    top: 300,
     textAlign: "center",
     transform: "scale(2)",
   };
 
   const agentBackgroundStyles: React.CSSProperties = {
-    width: matches ? "50rem" : "12rem",
+    width: matches ? "20rem" : "12rem",
     position: "absolute",
     marginLeft: "auto",
     marginRight: "auto",
     left: 0,
     right: 0,
+    top: 150,
     textAlign: "center",
     zIndex: -2,
     filter: "opacity(1.25%)",
@@ -41,13 +43,13 @@ export default function AgentBackground({
   };
 
   return (
-    <>
+    <Box display="flex" justifyContent="center" alignItems="center">
       <img src={agentImage} alt={agentName} style={agentStyles} />
       <img
         src={agentBackground}
         alt={agentName}
         style={agentBackgroundStyles}
       />
-    </>
+    </Box>
   );
 }

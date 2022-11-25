@@ -46,9 +46,6 @@ const LandingPage = () => {
       justifyContent="center"
       alignItems="center"
     >
-      <Grid>
-        <ValLogo />
-      </Grid>
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} zIndex={-1}>
         <AgentBackground
           agentName={current?.agent}
@@ -80,9 +77,6 @@ const LandingPage = () => {
             </Grid>
           );
         })}
-      </Grid>
-      <Grid item xs={12}>
-        <Footer />
       </Grid>
     </Grid>
   );

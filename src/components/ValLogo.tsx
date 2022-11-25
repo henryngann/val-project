@@ -9,7 +9,7 @@ export const ValLogo = () => {
         objectFit: "contain",
         width: "100%",
         height: "auto",
-        maxHeight: "20vh",
+        maxHeight: "5vh",
       }}
       alt="Main Valorant Logo"
     />
