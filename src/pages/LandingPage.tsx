@@ -1,9 +1,11 @@
 import { Grid } from "@mui/material";
+import { AnimatePresence } from "framer-motion/dist/framer-motion";
 import { useEffect, useState } from "react";
 import AgentBackground from "../components/AgentBackground";
 import AgentSquare from "../components/AgentSquare";
 import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
+import WordBackground from "../components/WordBackground";
 
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 type Agent = {
@@ -47,10 +49,15 @@ const LandingPage = () => {
       alignItems="center"
     >
       <Grid item xs={12} sm={12} md={12} lg={12} xl={12} zIndex={-1}>
+        <WordBackground
+          agentName={current?.agent}
+          agentBackground={current?.agentBackground}
+        />
+      </Grid>
+      <Grid item xs={12} sm={12} md={12} lg={12} xl={12} zIndex={-1}>
         <AgentBackground
           agentName={current?.agent}
           agentImage={current?.agentPortrait}
-          agentBackground={current?.agentBackground}
         />
       </Grid>
       <Grid
@@ -66,7 +73,7 @@ const LandingPage = () => {
       >
         {agents?.data.map((it) => {
           return (
-            <Grid item xl={1} key={it.uuid}>
+            <Grid item xl={1} key={it.uuid} sx={{ cursor: "pointer" }}>
               <AgentSquare
                 onClick={() =>
                   handleClick(it.displayName, it.fullPortrait!, it.background!)
