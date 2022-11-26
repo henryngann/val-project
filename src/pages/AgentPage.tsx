@@ -12,8 +12,6 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import GenericCard from "../components/GenericCard";
 import { ValLogo } from "../components/ValLogo";
 
-
-
 const AgentPage = () => {
   const sectionStyles = {
     width: "100%",
@@ -23,8 +21,7 @@ const AgentPage = () => {
   const [agents, setAgents] = useState<Root>();
   const { fetchCall } = useFetchAgentApi();
 
-
-  // use the tenary operator to render the footer conditonally 
+  // use the tenary operator to render the footer conditonally
 
   useEffect(() => {
     fetchCall().then((result) => setAgents(result as Root)); // eslint-disable-next-line
@@ -45,17 +42,8 @@ const AgentPage = () => {
       </Grid>
 
       <Grid component="article" container item xs={12}>
-        <Grid
-          container
-          item
-          xs={12}
-          xl={4}
-          spacing={2}
-          flexDirection="column"
-          sx={{ backgroundColor: "Red" }}
-        >
-
-          <Grid item xs={3} xl={4}>
+        <Grid container item xs={12} xl={4} spacing={2} flexDirection="column">
+          <Grid item xs={12} sx={{ overflow: "hidden" }}>
             <AgentCard
               agentImage={agents?.data[18].fullPortrait}
               agentName={agents?.data[0].displayName}
@@ -65,9 +53,9 @@ const AgentPage = () => {
               alt="Agent Full Portrait"
             />
           </Grid>
-          <Grid item xs={3} sm={6} xl={4}>
+          {/* <Grid item xs={3} sm={6} xl={4}>
             <StatsCard />
-          </Grid>
+          </Grid> */}
         </Grid>
         <Grid container xl={2} xs={8} spacing={2}>
           {/* <Grid item xl={12} xs={12}>
