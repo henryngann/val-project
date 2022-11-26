@@ -21,7 +21,6 @@ const WordBackground = ({
     marginRight: "auto",
     left: 0,
     right: 0,
-
     textAlign: "center",
     zIndex: -2,
     filter: "opacity(1.25%)",
