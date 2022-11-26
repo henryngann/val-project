@@ -13,6 +13,7 @@ interface cardProps {
   subtitle?: string;
   img?: string;
   body?: string;
+  widthProp?: string;
 }
 // add another prop to make subtitle more fancy
 // example: subtitle: "Win Ratio 60.23"
@@ -20,7 +21,7 @@ interface cardProps {
 // use ternary operator to render a fancy subtitle or a regular subtitle
 // fancyStyleProp ? <>fancyProp</> : <>regularProp</>
 //  https://reactjs.org/docs/conditional-rendergiting.html
-const GenericCard = ({ title, subtitle, img, body }: cardProps) => {
+const GenericCard = ({ title, subtitle, img, body, widthProp }: cardProps) => {
   return (
     <Paper elevation={6} style={paperStyle}>
       <Stack
@@ -34,7 +35,7 @@ const GenericCard = ({ title, subtitle, img, body }: cardProps) => {
         <img
           src={img}
           style={{
-            width: "30%",
+            width: `${widthProp}`,
           }}
         />
         <Stack direction={"row"} spacing={1} alignItems="center">

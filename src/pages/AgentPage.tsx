@@ -10,13 +10,9 @@ import WeaponCard from "../components/WeaponCard";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import GenericCard from "../components/GenericCard";
+import { ValLogo } from "../components/ValLogo";
 
-function MyComponent() {
-  const theme = useTheme();
-  const extrasmall = useMediaQuery(theme.breakpoints.up("xs"));
 
-  return <span>{`theme.breakpoints.up('xs') matches: ${extrasmall}`}</span>;
-}
 
 const AgentPage = () => {
   const sectionStyles = {
@@ -26,6 +22,9 @@ const AgentPage = () => {
 
   const [agents, setAgents] = useState<Root>();
   const { fetchCall } = useFetchAgentApi();
+
+
+  // use the tenary operator to render the footer conditonally 
 
   useEffect(() => {
     fetchCall().then((result) => setAgents(result as Root)); // eslint-disable-next-line
@@ -49,14 +48,14 @@ const AgentPage = () => {
         <Grid
           container
           item
-          xs={6}
+          xs={12}
           xl={4}
           spacing={2}
           flexDirection="column"
-          sx={{}}
+          sx={{ backgroundColor: "Red" }}
         >
 
-          <Grid item xs={6} xl={4}>
+          <Grid item xs={3} xl={4}>
             <AgentCard
               agentImage={agents?.data[18].fullPortrait}
               agentName={agents?.data[0].displayName}
@@ -66,12 +65,12 @@ const AgentPage = () => {
               alt="Agent Full Portrait"
             />
           </Grid>
-          <Grid item xs={6} sm={6} xl={4}>
+          <Grid item xs={3} sm={6} xl={4}>
             <StatsCard />
           </Grid>
         </Grid>
         <Grid container xl={2} xs={8} spacing={2}>
-          <Grid item xl={12} xs={12}>
+          {/* <Grid item xl={12} xs={12}>
             <AgentCardDetails
               agentPortrait={agents?.data[19].fullPortrait}
               agentName={agents?.data[19].displayName}
@@ -82,12 +81,12 @@ const AgentPage = () => {
               agentPortrait={agents?.data[17].fullPortrait}
               agentName={agents?.data[17].displayName}
             />
-          </Grid>
-          <Grid item xl={12} xs={12}>
+          </Grid> */}
+          {/* <Grid item xl={12} xs={12}>
             <GenericCard
               title="Rating"
               img="./assets/Diamond2.jpg"
-              subtitle="Diamond 2"
+
             />
           </Grid>
           <Grid item xl={12} xs={12}>
@@ -96,8 +95,9 @@ const AgentPage = () => {
               img="./assets/Prime.png"
               subtitle="Vandal"
               body="Assault Rifles"
+              widthProp="100%"
             />
-          </Grid>
+          </Grid> */}
         </Grid>
       </Grid>
       <Grid item xs={12} component="footer">
