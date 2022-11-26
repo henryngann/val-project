@@ -119,6 +119,7 @@ theme.typography.h4 = {
   color: primaryColors.light,
 };
 theme.typography.h5 = {
+  fontSize: `20px`,
   color: primaryColors.light,
 };
 theme.typography.h6 = {

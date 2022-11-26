@@ -1,5 +1,4 @@
 import { Paper, Stack, Typography } from "@mui/material";
-import React from "react";
 import CSS from "csstype";
 
 const paperStyle: CSS.Properties = {
@@ -13,16 +12,17 @@ interface cardProps {
   title?: string;
   subtitle?: string;
   img?: string;
+  body?: string;
 }
 // add another prop to make subtitle more fancy
 // example: subtitle: "Win Ratio 60.23"
 // change h5 in themes to a nice looking font here and we'll use it here.
 // use ternary operator to render a fancy subtitle or a regular subtitle
 // fancyStyleProp ? <>fancyProp</> : <>regularProp</>
-//  https://reactjs.org/docs/conditional-rendering.html
-const GenericCard = ({ title, subtitle, img }: cardProps) => {
+//  https://reactjs.org/docs/conditional-rendergiting.html
+const GenericCard = ({ title, subtitle, img, body }: cardProps) => {
   return (
-    <Paper elevation={9} style={paperStyle}>
+    <Paper elevation={6} style={paperStyle}>
       <Stack
         display="flex"
         justifyContent="center"
@@ -37,7 +37,10 @@ const GenericCard = ({ title, subtitle, img }: cardProps) => {
             width: "30%",
           }}
         />
-        <Typography variant="h5">{subtitle}</Typography>
+        <Stack direction={"row"} spacing={1} alignItems="center">
+          <Typography variant="h5">{subtitle}</Typography>
+          <Typography variant="body1">{body}</Typography>
+        </Stack>
       </Stack>
     </Paper>
   );

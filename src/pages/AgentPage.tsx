@@ -14,9 +14,9 @@ import GenericCard from "../components/GenericCard";
 
 function MyComponent() {
   const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("xs"));
+  const extrasmall = useMediaQuery(theme.breakpoints.up("xs"));
 
-  return <span>{`theme.breakpoints.up('xs') matches: ${matches}`}</span>;
+  return <span>{`theme.breakpoints.up('xs') matches: ${extrasmall}`}</span>;
 }
 
 const AgentPage = () => {
@@ -54,8 +54,9 @@ const AgentPage = () => {
           xl={4}
           spacing={2}
           flexDirection="column"
-          sx={{ backgroundColor: "green" }}
+          sx={{}}
         >
+
           <Grid item xs={6} xl={4}>
             <AgentCard
               agentImage={agents?.data[18].fullPortrait}
@@ -85,18 +86,18 @@ const AgentPage = () => {
           </Grid>
           <Grid item xl={12} xs={12}>
             <GenericCard
-              title="Ricky"
+              title="Rating"
               img="./assets/Diamond2.jpg"
-              subtitle="glasses"
+              subtitle="Diamond 2"
             />
           </Grid>
           <Grid item xl={12} xs={12}>
             <GenericCard
-              title="Rank"
-              img="./assets/Diamond2.jpg"
-              subtitle="Diamond 2"
-            />{" "}
-            make this the gun card
+              title="Top Weapon"
+              img="./assets/Prime.png"
+              subtitle="Vandal"
+              body="Assault Rifles"
+            />
           </Grid>
         </Grid>
       </Grid>
