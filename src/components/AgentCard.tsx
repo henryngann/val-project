@@ -32,6 +32,10 @@ const bold: CSS.Properties = {
   fontWeight: "bold",
 };
 
+const textColor: CSS.Properties = {
+  color: "#B9BDC5"
+};
+
 export default function AgentCard({
   agentImage,
   abilityIcon1,
@@ -40,8 +44,7 @@ export default function AgentCard({
   agentName,
   alt,
 }: AgentProps) {
-  //Add bullet points
-  //play a round with scale optioanl
+
 
   return (
     <Card
@@ -49,6 +52,7 @@ export default function AgentCard({
         display: "flex",
         zIndex: -1,
         overflow: "visible",
+        background: "linear-gradient(0.40turn, #191B2A, #0C0F2E)"
       }}
     >
       <CardContent sx={{ width: "50%" }}>
@@ -69,10 +73,10 @@ export default function AgentCard({
               spacing={2}
               sx={{ display: "flex", alignItems: "center" }}
             >
-              <Typography variant="h4" sx={{ color: "#FF4654" }}>
+              <Typography variant="h4" sx={{ color: "#FD4553" }}>
                 {agentName?.toUpperCase()}
               </Typography>
-              <Typography variant="h6"> Played 354H 46M</Typography>
+              <Typography variant="h6" sx={{ color: "#C0C1C9" }}> Played 354H 46M</Typography>
             </Stack>
           </Box>
           <Stack
@@ -81,23 +85,23 @@ export default function AgentCard({
             alignItems="baseline"
             justifyContent="space-between"
             spacing={2}
-            sx={{ width: "100%", borderTop: "1px solid grey" }}
+            sx={{ width: "100%", borderTop: "1px solid rgba(128, 128, 128, .5)" }}
           >
             <Box flexDirection="column">
-              <Typography variant="body2">Win Ratio</Typography>
+              <Typography variant="body2" sx={textColor}>Win Ratio</Typography>
               <Typography variant="body2" sx={bold}>
                 62.11%
               </Typography>
             </Box>
             <Box flexDirection="column">
-              <Typography variant="body2">K/D Ratio</Typography>
+              <Typography variant="body2" sx={textColor}>K/D Ratio</Typography>
               <Typography variant="body2" sx={bold}>
                 1.14
               </Typography>
             </Box>
             <Box flexDirection="column">
-              <Typography variant="body2">Win Ratio</Typography>
-              <Typography variant="body2" style={bold}>
+              <Typography variant="body2" sx={textColor}>Win Ratio</Typography>
+              <Typography variant="body2" sx={bold}>
                 138.2
               </Typography>
             </Box>
@@ -105,7 +109,7 @@ export default function AgentCard({
           <Stack
             sx={{ height: "30px", display: "flex", justifyContent: "end" }}
           >
-            <Typography variant="body2">Ability Kills/Match</Typography>
+            <Typography variant="body2" sx={textColor}>Ability Kills/Match</Typography>
           </Stack>
           <Box sx={{ width: "100%", display: "flex" }}>
             <Box sx={abilityStyles}>
