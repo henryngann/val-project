@@ -41,8 +41,8 @@ const AgentPage = () => {
         <ValLogo />
       </Grid>
 
-      <Grid component="article" container item xs={12}>
-        <Grid container item xs={12} xl={4} spacing={2} flexDirection="column">
+      <Grid component="article" container item xs={12} xl={12}>
+        <Grid container item xs={12} xl={3} spacing={2} flexDirection="row">
           <Grid item xs={12} sx={{ overflow: "hidden" }}>
             <AgentCard
               agentImage={agents?.data[18].fullPortrait}
@@ -53,9 +53,9 @@ const AgentPage = () => {
               alt="Agent Full Portrait"
             />
           </Grid>
-          {/* <Grid item xs={3} sm={6} xl={4}>
+          <Grid item xs={12} sm={6} xl={12}  >
             <StatsCard />
-          </Grid> */}
+          </Grid>
         </Grid>
         <Grid container xl={2} xs={8} spacing={2}>
           {/* <Grid item xl={12} xs={12}>
