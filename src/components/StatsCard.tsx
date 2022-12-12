@@ -54,8 +54,6 @@ const textLeft: CSS.Properties = {
 }
 
 
-
-
 export default function StatsCard() {
     //Add bullet points
     //play a round with scale optioanl

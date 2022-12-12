@@ -46,7 +46,7 @@ const AgentPage = () => {
           <Grid item xs={12} sx={{ overflow: "hidden" }}>
             <AgentCard
               agentImage={agents?.data[18].fullPortrait}
-              agentName={agents?.data[0].displayName}
+              agentName={agents?.data[18].displayName}
               abilityIcon1={agents?.data[18].abilities[0].displayIcon}
               abilityIcon2={agents?.data[18].abilities[3].displayIcon}
               abilityIcon3={agents?.data[18].abilities[1].displayIcon}
