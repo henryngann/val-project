@@ -116,8 +116,10 @@ theme.typography.h3 = {
 };
 theme.typography.h4 = {
   fontSize: `25px`,
+  color: primaryColors.light,
 };
 theme.typography.h5 = {
+  fontSize: `20px`,
   color: primaryColors.light,
 };
 theme.typography.h6 = {
@@ -125,6 +127,10 @@ theme.typography.h6 = {
 };
 theme.typography.body1 = {
   color: primaryColors.light,
+};
+theme.typography.body2 = {
+  fontSize: `12px`,
+  color: primaryColors.light
 };
 theme.typography.subtitle1 = {
   fontSize: "1rem",

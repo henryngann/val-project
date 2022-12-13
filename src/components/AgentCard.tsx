@@ -4,81 +4,157 @@ import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import React from "react";
+import CSS from "csstype";
 interface AgentProps {
   name?: string;
   agentName?: string;
   agentImage?: string;
-  ability1?: string;
-  ability2?: string;
+  abilityIcon1?: string;
+  abilityIcon2?: string;
+  abilityIcon3?: string;
   alt?: string;
 }
 
+const abilitySize: CSS.Properties = {
+  width: "25%",
+};
+const abilityStyles: CSS.Properties = {
+  display: "flex",
+  marginTop: "10px",
+};
+
+const abilitySpacing: CSS.Properties = {
+  marginLeft: "7px",
+  fontWeight: "bold",
+};
+
+const bold: CSS.Properties = {
+  fontWeight: "bold",
+};
+
+const textColor: CSS.Properties = {
+  color: "#B9BDC5"
+};
+
 export default function AgentCard({
-  name,
   agentImage,
-  ability1,
-  ability2,
+  abilityIcon1,
+  abilityIcon2,
+  abilityIcon3,
   agentName,
   alt,
 }: AgentProps) {
-  //Add bullet points
-  //play a round with scale optioanl
 
-  //   <Box sx={{ position: "relative", width: 140, zIndex: 999 }}>
-  //   <img
-  //     src={agentImage}
-  //     alt={alt}
-  //     style={{
-  //       scale: "2 1",
-  //       top: -40,
-  //       width: "100%",
-  //       height: "120%",
-  //       position: "absolute",
-  //     }}
-  //   />
-  // </Box>
+
   return (
-    <Grid
-      container
-      display="flex"
-      direction={"row"}
-      justifyContent="center"
-      alignItems="center"
+    <Card
+      sx={{
+        display: "flex",
+        zIndex: -1,
+        overflow: "visible",
+        background: "linear-gradient(0.40turn, #191B2A, #0C0F2E)"
+      }}
     >
-      <Grid item xs={6} xl={1}>
-        <Card
+      <CardContent sx={{ width: "50%" }}>
+        <Box
           sx={{
             display: "flex",
-            width: "450px",
-            height: "200px",
-            zIndex: -1,
-            overflow: "visible",
+            flexDirection: "column",
           }}
         >
-          <CardContent sx={{ width: "50%" }}>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "column",
-              }}
+          <Typography variant="h5">Top Agent</Typography>
+          <Box
+            sx={{
+              padding: "10px 0px",
+            }}
+          >
+            <Stack
+              direction="row"
+              spacing={2}
+              sx={{ display: "flex", alignItems: "center" }}
             >
-              <Typography variant="h5">{name}</Typography>
-              <Typography variant="h6">{agentName}</Typography>
-              <Stack
-                display="flex"
-                flexDirection="row"
-                alignItems="baseline"
-                justifyContent="space-between"
-                spacing={6}
-                sx={{ width: "100%" }}
-              >
-                <Typography variant="body1">• {ability1}</Typography>
-                <Typography variant="body1">• {ability2}</Typography>
-              </Stack>
+              <Typography variant="h4" sx={{ color: "#FD4553" }}>
+                {agentName?.toUpperCase()}
+              </Typography>
+              <Typography variant="h6" sx={{ color: "#C0C1C9" }}> Played 354H 46M</Typography>
+            </Stack>
+          </Box>
+          <Stack
+            display="flex"
+            flexDirection="row"
+            alignItems="baseline"
+            justifyContent="space-between"
+            spacing={2}
+            sx={{ width: "100%", borderTop: "1px solid rgba(128, 128, 128, .5)" }}
+          >
+            <Box flexDirection="column">
+              <Typography variant="body2" sx={textColor}>Win Ratio</Typography>
+              <Typography variant="body2" sx={bold}>
+                62.11%
+              </Typography>
             </Box>
-          </CardContent>
-        </Card>
-      </Grid>
-    </Grid>
+            <Box flexDirection="column">
+              <Typography variant="body2" sx={textColor}>K/D Ratio</Typography>
+              <Typography variant="body2" sx={bold}>
+                1.14
+              </Typography>
+            </Box>
+            <Box flexDirection="column">
+              <Typography variant="body2" sx={textColor}>Win Ratio</Typography>
+              <Typography variant="body2" sx={bold}>
+                138.2
+              </Typography>
+            </Box>
+          </Stack>
+          <Stack
+            sx={{ height: "30px", display: "flex", justifyContent: "end" }}
+          >
+            <Typography variant="body2" sx={textColor}>Ability Kills/Match</Typography>
+          </Stack>
+          <Box sx={{ width: "100%", display: "flex" }}>
+            <Box sx={abilityStyles}>
+              <img src={abilityIcon1} style={abilitySize} />
+              <Typography variant="body2" sx={abilitySpacing}>
+                {" "}
+                0.33{" "}
+              </Typography>
+            </Box>
+            <Box sx={abilityStyles}>
+              <img src={abilityIcon2} style={abilitySize} />
+              <Typography variant="body2" sx={abilitySpacing}>
+                {" "}
+                0.78{" "}
+              </Typography>
+            </Box>
+            <Box sx={abilityStyles}>
+              <img src={abilityIcon3} style={abilitySize} />
+              <Typography variant="body2" sx={abilitySpacing}>
+                {" "}
+                4.82{" "}
+              </Typography>
+            </Box>
+          </Box>
+        </Box>
+      </CardContent>
+      <Box
+        sx={{
+          position: "relative",
+          width: 140,
+          zIndex: 999,
+        }}
+      >
+        <img
+          src={agentImage}
+          alt={alt}
+          style={{
+            scale: "2 1",
+            top: -50,
+            width: "100%",
+            height: "120%",
+            position: "absolute",
+          }}
+        />
+      </Box>
+    </Card>
   );
 }
