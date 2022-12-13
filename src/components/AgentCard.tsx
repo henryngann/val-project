@@ -21,22 +21,6 @@ export default function AgentCard({
   agentName,
   alt,
 }: AgentProps) {
-  //Add bullet points
-  //play a round with scale optioanl
-
-  //   <Box sx={{ position: "relative", width: 140, zIndex: 999 }}>
-  //   <img
-  //     src={agentImage}
-  //     alt={alt}
-  //     style={{
-  //       scale: "2 1",
-  //       top: -40,
-  //       width: "100%",
-  //       height: "120%",
-  //       position: "absolute",
-  //     }}
-  //   />
-  // </Box>
   return (
     <Grid
       container
