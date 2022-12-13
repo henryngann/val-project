@@ -6,8 +6,10 @@ import AgentSquare from "../components/AgentSquare";
 import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
 import WordBackground from "../components/WordBackground";
+import { Link, Route } from 'react-router-dom'
 
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
+
 type Agent = {
   agent?: string;
   agentPortrait?: string;
@@ -74,13 +76,15 @@ const LandingPage = () => {
         {agents?.data.map((it) => {
           return (
             <Grid item xl={1} key={it.uuid} sx={{ cursor: "pointer" }}>
-              <AgentSquare
-                onClick={() =>
-                  handleClick(it.displayName, it.fullPortrait!, it.background!)
-                }
-                agentImage={it.displayIconSmall}
-                agentName={it.displayName}
-              />
+              <Link to={`/agentinfo/${it.displayName}`}>
+                <AgentSquare
+                  onClick={() =>
+                    handleClick(it.displayName, it.fullPortrait!, it.background!)
+                  }
+                  agentImage={it.displayIconSmall}
+                  agentName={it.displayName}
+                />
+              </Link>
             </Grid>
           );
         })}
