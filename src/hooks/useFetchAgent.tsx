@@ -62,6 +62,8 @@ export default function useFetchAgentApi() {
 
   const url = "https://valorant-api.com/v1/agents?isPlayableCharacter=true";
 
+
+
   //http://localhost:8080/api/agents
   const fetchCall = () =>
     fetch(url)

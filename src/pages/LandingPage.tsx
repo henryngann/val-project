@@ -6,8 +6,7 @@ import AgentSquare from "../components/AgentSquare";
 import Footer from "../components/Footer";
 import { ValLogo } from "../components/ValLogo";
 import WordBackground from "../components/WordBackground";
-import { Link, Route } from 'react-router-dom'
-
+import { Link } from 'react-router-dom'
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
 type Agent = {
@@ -15,6 +14,9 @@ type Agent = {
   agentPortrait?: string;
   agentBackground?: string;
 };
+
+
+
 const LandingPage = () => {
   const sectionStyles = {
     width: "100%",
@@ -39,6 +41,7 @@ const LandingPage = () => {
       agentBackground: agentBackground,
     });
   };
+
 
   return (
     <Grid
@@ -76,7 +79,7 @@ const LandingPage = () => {
         {agents?.data.map((it) => {
           return (
             <Grid item xl={1} key={it.uuid} sx={{ cursor: "pointer" }}>
-              <Link to={`/agentinfo/${it.displayName}`}>
+              <Link to={`/agent/${it.uuid}`}>
                 <AgentSquare
                   onClick={() =>
                     handleClick(it.displayName, it.fullPortrait!, it.background!)
@@ -89,7 +92,7 @@ const LandingPage = () => {
           );
         })}
       </Grid>
-    </Grid>
+    </Grid >
   );
 };
 
