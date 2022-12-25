@@ -3,10 +3,7 @@ import { useEffect, useState } from "react";
 import AgentBackground from "../components/AgentBackground";
 import AgentSquare from "../components/AgentSquare";
 import WordBackground from "../components/WordBackground";
-
-import { Link } from 'react-router-dom'
-
-
+import { Link } from "react-router-dom";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
 type Agent = {
@@ -14,8 +11,6 @@ type Agent = {
   agentPortrait?: string;
   agentBackground?: string;
 };
-
-
 
 const LandingPage = () => {
   const sectionStyles = {
@@ -41,7 +36,6 @@ const LandingPage = () => {
       agentBackground: agentBackground,
     });
   };
-
 
   return (
     <Grid
@@ -96,7 +90,7 @@ const LandingPage = () => {
           );
         })}
       </Grid>
-    </Grid >
+    </Grid>
   );
 };
 

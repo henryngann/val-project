@@ -1,9 +1,8 @@
 import React from "react";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
-import { Box } from "@mui/material";
 import { motion } from "framer-motion";
-import { AnimatePresence, MotionStyle } from "framer-motion/dist/framer-motion";
+
 interface AgentBackgroundProps {
   agentImage?: string;
   agentName?: string;

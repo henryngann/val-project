@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react";
 
-import { Box, Button } from "@mui/material";
+import { Box } from "@mui/material";
 
 const MusicPlayer = () => {
   const musicSrc = "../assets/bgmusic2.mp3";

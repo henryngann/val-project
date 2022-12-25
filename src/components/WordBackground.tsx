@@ -1,5 +1,4 @@
 import React from "react";
-
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
 import { motion } from "framer-motion";
@@ -8,12 +7,14 @@ interface AgentBackgroundProps {
   agentName?: string;
   agentBackground?: string;
 }
+
 const WordBackground = ({
   agentName,
   agentBackground,
 }: AgentBackgroundProps) => {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up("sm"));
+
   const agentBackgroundStyles: React.CSSProperties = {
     width: matches ? "32rem" : "15rem",
     position: "absolute",

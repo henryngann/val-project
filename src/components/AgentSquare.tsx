@@ -8,7 +8,6 @@ interface AgentPolaroid {
   onClick: any;
 }
 
-
 export default function AgentSquare({
   agentImage,
   agentName,

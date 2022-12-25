@@ -1,6 +1,5 @@
 import React from "react";
 
-//TODO do meaningful alt text
 export const ValLogo = () => {
   return (
     <img
