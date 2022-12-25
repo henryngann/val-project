@@ -26,7 +26,6 @@ export default function AgentBackground({
     right: 0,
     top: 150,
     textAlign: "center",
-
     filter: "drop-shadow(0 0 0.50rem #090009)",
   };
 
