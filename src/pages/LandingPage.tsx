@@ -1,12 +1,12 @@
 import { Grid } from "@mui/material";
-import { AnimatePresence } from "framer-motion/dist/framer-motion";
 import { useEffect, useState } from "react";
 import AgentBackground from "../components/AgentBackground";
 import AgentSquare from "../components/AgentSquare";
-import Footer from "../components/Footer";
-import { ValLogo } from "../components/ValLogo";
 import WordBackground from "../components/WordBackground";
+
 import { Link } from 'react-router-dom'
+
+
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
 
 type Agent = {
@@ -82,7 +82,11 @@ const LandingPage = () => {
               <Link to={`/agent/${it.uuid}`}>
                 <AgentSquare
                   onClick={() =>
-                    handleClick(it.displayName, it.fullPortrait!, it.background!)
+                    handleClick(
+                      it.displayName,
+                      it.fullPortrait!,
+                      it.background!
+                    )
                   }
                   agentImage={it.displayIconSmall}
                   agentName={it.displayName}
