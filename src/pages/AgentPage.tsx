@@ -1,4 +1,4 @@
-import { Grid } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import AgentCard from "../components/AgentCard";
@@ -12,14 +12,10 @@ const AgentPage = () => {
     height: "100vh",
   };
 
-  const [agents, setAgents] = useState<Root>();
   const { fetchCall } = useFetchAgentApi();
   const { id } = useParams();
 
-  useEffect(() => {
-    fetchCall().then((result) => setAgents(result as Root)); // eslint-disable-next-line
-  }, []);
-
+  console.log(id);
   return (
     <Grid
       container
@@ -44,29 +40,7 @@ const AgentPage = () => {
         sx={{ backgroundColor: "green" }}
         spacing={2}
       >
-        <Grid container item xl={12}>
-          <Grid item xl={6}>
-            <AgentCard
-              agentImage={agents?.data[0].displayIcon}
-              name={agents?.data[0].role?.displayName}
-              agentName={agents?.data[0].displayName}
-              ability1={agents?.data[0].abilities[1].displayName}
-              ability2={agents?.data[0].abilities[2].displayName}
-            />
-          </Grid>
-          <Grid item xl={4}>
-            <AgentCardDetails />
-          </Grid>
-        </Grid>
-        <Grid item xl={12}>
-          <AgentCard
-            agentImage={agents?.data[0].displayIcon}
-            name={agents?.data[0].role?.displayName}
-            agentName={agents?.data[0].displayName}
-            ability1={agents?.data[0].abilities[1].displayName}
-            ability2={agents?.data[0].abilities[2].displayName}
-          />
-        </Grid>
+        <Typography variant="body2">{id}</Typography>
       </Grid>
       <Grid item xs={12} component="footer">
         <Footer />
