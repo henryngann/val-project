@@ -1,9 +1,12 @@
 import { Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import AgentCard from "../components/AgentCard";
 import AgentCardDetails from "../components/AgentCardDetails";
 import Footer from "../components/Footer";
 import useFetchAgentApi, { Root } from "../hooks/useFetchAgent";
+
+
 
 const AgentPage = () => {
   const sectionStyles = {
@@ -13,10 +16,30 @@ const AgentPage = () => {
 
   const [agents, setAgents] = useState<Root>();
   const { fetchCall } = useFetchAgentApi();
+  const { id } = useParams();
 
   useEffect(() => {
     fetchCall().then((result) => setAgents(result as Root)); // eslint-disable-next-line
   }, []);
+
+
+  // const uuid = `https://valorant-api.com/v1/agents/${agents?.data[0].uuid}`
+  // console.log(uuid)
+
+  const url = `https://valorant-api.com/v1/agents/${id}`
+  console.log(url)
+  console.log(id)
+
+  const agentUuid = () => {
+    fetch(url)
+      .then(response => response.json())
+      .then(result => {
+        setAgents(result);
+        console.log(result)
+      });
+
+  }
+
 
   return (
     <Grid
@@ -73,6 +96,7 @@ const AgentPage = () => {
         <Footer />
       </Grid>
     </Grid>
+
   );
 };
 

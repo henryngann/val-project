@@ -1,11 +1,13 @@
 import * as React from "react";
 import { motion } from "framer-motion";
 import { MotionStyle } from "framer-motion/dist/framer-motion";
+
 interface AgentPolaroid {
   agentImage: string;
   agentName: string;
   onClick: any;
 }
+
 
 export default function AgentSquare({
   agentImage,
